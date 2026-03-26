@@ -25,10 +25,6 @@ export function useUrlMediaPage(id: number) {
       return "";
     }
 
-    if (url.shortUrl) {
-      return url.shortUrl;
-    }
-
     const shortBase =
       process.env.NEXT_PUBLIC_SHORT_URL_BASE ||
       (typeof window !== "undefined" ? window.location.origin : "");

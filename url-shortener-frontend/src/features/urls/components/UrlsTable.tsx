@@ -117,7 +117,7 @@ export function UrlsTable({ variant = "full", query }: UrlsTableProps) {
           </TableHeader>
           <TableBody>
             {compactUrls.map((url: UrlDetail) => {
-              const shortUrl = url.shortUrl || buildShortUrl(url.shortCode);
+              const shortUrl = buildShortUrl(url.shortCode);
               const canUseLink = isUrlActionable(url);
 
               return (
@@ -190,7 +190,7 @@ export function UrlsTable({ variant = "full", query }: UrlsTableProps) {
               <TableCell className="px-8 py-6 font-medium">
                 <div className="flex items-center gap-2">
                   {(() => {
-                    const shortUrl = url.shortUrl || buildShortUrl(url.shortCode);
+                    const shortUrl = buildShortUrl(url.shortCode);
                     const canUseLink = isUrlActionable(url);
 
                     if (!canUseLink) {
