@@ -1,0 +1,50 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: url-shortener-backend
+  servlet:
+    multipart:
+      max-file-size: ${APP_MAX_UPLOAD_FILE_SIZE:5MB}
+      max-request-size: ${APP_MAX_UPLOAD_REQUEST_SIZE:5MB}
+  profiles:
+    active: prod
+    include: actuator
+  security:
+    oauth2:
+      client:
+        registration:
+          google:
+            redirect-uri: ${APP_BASE_URL:http://localhost:8080}/login/oauth2/code/{registrationId}
+
+app:
+  jwtSecret: ${JWT_SECRET}
+  jwtExpirationMs: ${JWT_EXPIRATION_MS}
+  jwtRefreshExpirationMs: ${JWT_REFRESH_EXPIRATION_MS}
+  base-url: ${APP_BASE_URL:http://localhost:8080}
+  frontend-url: ${APP_FRONTEND_URL:http://localhost:3002}
+
+  oauth2:
+    authorizedRedirectUri: ${APP_OAUTH2_REDIRECT_URI:http://localhost:3002/oauth2/callback}
+
+  mail:
+    from: ${MAIL_FROM:noreply@urlshort.io}
+    from-name: UrlShort
+
+minio:
+  endpoint: ${MINIO_ENDPOINT:http://localhost:9000}
+  public-endpoint: ${MINIO_PUBLIC_ENDPOINT:${MINIO_ENDPOINT:http://localhost:9000}}
+  region: ${MINIO_REGION:us-east-1}
+  access-key: ${MINIO_ACCESS_KEY:minioadmin}
+  secret-key: ${MINIO_SECRET_KEY:minioadmin123}
+  bucket: ${MINIO_BUCKET:url-shortener}
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "health,info,prometheus,metrics"
+  metrics:
+    tags:
+      application: url-shortener-backend

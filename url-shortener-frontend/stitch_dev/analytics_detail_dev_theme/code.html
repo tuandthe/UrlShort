@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>UrlShort - Analytics Detail</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#23005c",
+              "on-primary": "#3c0091",
+              "on-primary-fixed-variant": "#5516be",
+              "inverse-on-surface": "#293040",
+              "on-primary-container": "#340080",
+              "secondary-fixed-dim": "#adc6ff",
+              "tertiary": "#ffb0cd",
+              "tertiary-fixed-dim": "#ffb0cd",
+              "surface-dim": "#0c1322",
+              "surface-container-high": "#232a3a",
+              "surface-bright": "#323949",
+              "on-error": "#690005",
+              "on-surface-variant": "#cbc3d7",
+              "on-surface": "#dce2f7",
+              "outline-variant": "#494454",
+              "primary": "#d0bcff",
+              "on-secondary-container": "#e6ecff",
+              "secondary-fixed": "#d8e2ff",
+              "surface-container": "#191f2f",
+              "tertiary-fixed": "#ffd9e4",
+              "on-background": "#dce2f7",
+              "surface-container-lowest": "#070e1d",
+              "error": "#ffb4ab",
+              "surface-variant": "#2e3545",
+              "on-secondary-fixed": "#001a42",
+              "primary-fixed-dim": "#d0bcff",
+              "surface-container-low": "#141b2b",
+              "surface": "#0c1322",
+              "surface-tint": "#d0bcff",
+              "on-tertiary-fixed": "#3e0022",
+              "primary-container": "#a078ff",
+              "on-tertiary-fixed-variant": "#8c0053",
+              "primary-fixed": "#e9ddff",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#004395",
+              "outline": "#958ea0",
+              "on-tertiary": "#640039",
+              "on-tertiary-container": "#570032",
+              "inverse-primary": "#6d3bd7",
+              "error-container": "#93000a",
+              "secondary-container": "#0566d9",
+              "on-secondary": "#002e6a",
+              "tertiary-container": "#f751a1",
+              "inverse-surface": "#dce2f7",
+              "background": "#0c1322",
+              "surface-container-highest": "#2e3545",
+              "secondary": "#adc6ff"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(25, 31, 47, 0.4);
+        backdrop-filter: blur(12px);
+      }
+      .glow-primary {
+        box-shadow: 0 0 20px rgba(208, 188, 255, 0.15);
+      }
+      ::-webkit-scrollbar { width: 6px; }
+      ::-webkit-scrollbar-track { background: #070e1d; }
+      ::-webkit-scrollbar-thumb { background: #2e3545; border-radius: 10px; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-primary/30 antialiased">
+<!-- TopNavBar (Shared Component) -->
+<nav class="fixed top-0 w-full z-50 flex justify-between items-center px-6 h-16 bg-[#0c1322]/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-white bg-clip-text bg-gradient-to-br from-[#d0bcff] to-[#a078ff]">UrlShort</span>
+<div class="hidden md:flex gap-6">
+<a class="text-[#cbc3d7] hover:text-white transition-colors duration-200 font-['Inter'] antialiased tracking-tight" href="#">Docs</a>
+<a class="text-[#cbc3d7] hover:text-white transition-colors duration-200 font-['Inter'] antialiased tracking-tight" href="#">API</a>
+<a class="text-[#cbc3d7] hover:text-white transition-colors duration-200 font-['Inter'] antialiased tracking-tight" href="#">Pricing</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="p-2 text-[#cbc3d7] hover:text-white active:scale-95 transition-all"><span class="material-symbols-outlined">notifications</span></button>
+<button class="p-2 text-[#cbc3d7] hover:text-white active:scale-95 transition-all"><span class="material-symbols-outlined">help</span></button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest overflow-hidden outline outline-1 outline-outline-variant/20">
+<img alt="User avatar" data-alt="Close up of a professional user profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDAh9TDejiKHBPgwI2xcaVAawR4FSxwwXA_N2hsjCAAuFc1XXEzQ701yVYqDjfL3GsyLt877rafJCro2ujBDhaoy3zWGSHk8JxhnLSlf3SC_23mYG2JNYtzlZzABVWgdeqw-FStP-UT2ypSvf1cUbvl4PRvPYEFhOWtiApirs7rCwKsWZUr7HH_xaFFgGNfXu-rdnTCQAcY1nwJ3ql13bVLxGLSUVuvMlxLpEJ5B23l5ToeuqC2WlKRzJfWyQUfLYaSH48OfI2vHQ"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar (Shared Component) -->
+<aside class="fixed left-0 top-0 h-screen w-64 z-40 bg-[#070e1d] flex flex-col p-4 gap-2 pt-20">
+<div class="mb-6 px-4">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-container flex items-center justify-center">
+<span class="material-symbols-outlined text-on-primary-container">link</span>
+</div>
+<div>
+<h3 class="font-bold text-white leading-tight">UrlShort</h3>
+<p class="text-[10px] uppercase tracking-widest text-on-surface-variant font-medium">Dev Console</p>
+</div>
+</div>
+</div>
+<nav class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#cbc3d7] hover:bg-[#191f2f]/50 hover:text-white transition-all font-['Inter'] text-sm font-medium rounded-lg" href="#">
+<span class="material-symbols-outlined">dashboard</span> Overview
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#cbc3d7] hover:bg-[#191f2f]/50 hover:text-white transition-all font-['Inter'] text-sm font-medium rounded-lg" href="#">
+<span class="material-symbols-outlined">link</span> My URLs
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#191f2f] text-[#d0bcff] rounded-lg shadow-[0_0_15px_rgba(208,188,255,0.1)] font-['Inter'] text-sm font-medium" href="#">
+<span class="material-symbols-outlined">analytics</span> Analytics
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#cbc3d7] hover:bg-[#191f2f]/50 hover:text-white transition-all font-['Inter'] text-sm font-medium rounded-lg" href="#">
+<span class="material-symbols-outlined">admin_panel_settings</span> Admin
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#cbc3d7] hover:bg-[#191f2f]/50 hover:text-white transition-all font-['Inter'] text-sm font-medium rounded-lg" href="#">
+<span class="material-symbols-outlined">settings</span> Settings
+            </a>
+</nav>
+<div class="mt-auto border-t border-outline-variant/10 pt-4 space-y-1">
+<button class="w-full mb-4 py-3 rounded-lg bg-gradient-to-br from-[#d0bcff] to-[#a078ff] text-on-primary font-bold text-sm active:scale-95 transition-transform shadow-[0_0_20px_rgba(208,188,255,0.2)]">
+                Create New Link
+            </button>
+<a class="flex items-center gap-3 px-4 py-2 text-[#cbc3d7] hover:text-white transition-all text-sm" href="#">
+<span class="material-symbols-outlined text-lg">menu_book</span> Documentation
+            </a>
+<a class="flex items-center gap-3 px-4 py-2 text-[#cbc3d7] hover:text-white transition-all text-sm" href="#">
+<span class="material-symbols-outlined text-lg">contact_support</span> Support
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-16 min-h-screen">
+<div class="p-8 max-w-7xl mx-auto space-y-8">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-4">
+<div class="space-y-1">
+<button class="flex items-center gap-2 text-primary text-sm font-medium hover:underline transition-all mb-4">
+<span class="material-symbols-outlined text-sm">arrow_back</span> Back to list
+                    </button>
+<h1 class="text-4xl font-extrabold tracking-tight text-white font-headline">Performance Report</h1>
+<p class="text-on-surface-variant text-lg">Analytics for <span class="text-secondary font-mono">slk.sh/xJ92k1v</span></p>
+</div>
+<div class="flex gap-3">
+<button class="px-4 py-2 bg-surface-container-high text-on-surface text-sm font-medium rounded-lg border border-outline-variant/20 hover:bg-surface-variant transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-base">calendar_today</span> Last 30 Days
+                    </button>
+<button class="px-4 py-2 bg-surface-container-high text-on-surface text-sm font-medium rounded-lg border border-outline-variant/20 hover:bg-surface-variant transition-all flex items-center gap-2">
+<span class="material-symbols-outlined text-base">ios_share</span> Export
+                    </button>
+</div>
+</header>
+<!-- Bento Grid - Key Metrics -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Stat Card 1 -->
+<div class="glass-card p-6 rounded-xl border border-outline-variant/10 glow-primary relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-primary">ads_click</span>
+</div>
+<p class="text-xs uppercase tracking-[0.15em] text-on-surface-variant font-bold mb-2">Total Clicks</p>
+<h2 class="text-4xl font-extrabold text-white tracking-tighter">12,842</h2>
+<div class="mt-4 flex items-center gap-2 text-sm">
+<span class="px-2 py-0.5 bg-secondary-container/20 text-secondary rounded-full flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-xs">trending_up</span> 14.2%
+                        </span>
+<span class="text-on-surface-variant font-medium">vs last month</span>
+</div>
+</div>
+<!-- Stat Card 2 -->
+<div class="glass-card p-6 rounded-xl border border-outline-variant/10 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-secondary">query_stats</span>
+</div>
+<p class="text-xs uppercase tracking-[0.15em] text-on-surface-variant font-bold mb-2">Avg Clicks / Day</p>
+<h2 class="text-4xl font-extrabold text-white tracking-tighter">428.1</h2>
+<div class="mt-4 flex items-center gap-2 text-sm">
+<span class="px-2 py-0.5 bg-error-container/20 text-error rounded-full flex items-center gap-1 font-bold">
+<span class="material-symbols-outlined text-xs">trending_down</span> 2.1%
+                        </span>
+<span class="text-on-surface-variant font-medium">vs last month</span>
+</div>
+</div>
+<!-- Stat Card 3 -->
+<div class="glass-card p-6 rounded-xl border border-outline-variant/10 relative overflow-hidden group">
+<div class="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+<span class="material-symbols-outlined text-6xl text-tertiary">share_location</span>
+</div>
+<p class="text-xs uppercase tracking-[0.15em] text-on-surface-variant font-bold mb-2">Top Referrer</p>
+<h2 class="text-4xl font-extrabold text-white tracking-tighter">Twitter.com</h2>
+<div class="mt-4 flex items-center gap-2 text-sm">
+<span class="text-on-surface-variant font-medium"><span class="text-tertiary">42%</span> of total traffic volume</span>
+</div>
+</div>
+</div>
+<!-- Main Charts Row -->
+<div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+<!-- Engagement Pulse Chart -->
+<div class="lg:col-span-2 glass-card p-8 rounded-xl border border-outline-variant/10">
+<div class="flex justify-between items-start mb-8">
+<div>
+<h3 class="text-xl font-bold text-white tracking-tight">Engagement Pulse</h3>
+<p class="text-on-surface-variant text-sm">Unique clicks over the last 14 days</p>
+</div>
+<span class="material-symbols-outlined text-on-surface-variant">show_chart</span>
+</div>
+<!-- Chart Visualization Mockup -->
+<div class="h-64 flex items-end justify-between gap-2">
+<div class="w-full bg-surface-container rounded-t h-[40%] hover:bg-primary/40 transition-all cursor-pointer relative group">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-surface-container-highest px-2 py-1 rounded text-[10px] opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">Mon: 1.2k</div>
+</div>
+<div class="w-full bg-surface-container rounded-t h-[55%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="w-full bg-surface-container rounded-t h-[35%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="w-full bg-surface-container rounded-t h-[70%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="w-full bg-surface-container rounded-t h-[85%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="w-full bg-primary/20 rounded-t h-[95%] border-t-2 border-primary glow-primary hover:bg-primary/40 transition-all cursor-pointer relative group">
+<div class="absolute -top-10 left-1/2 -translate-x-1/2 bg-surface-container-highest px-2 py-1 rounded text-[10px] opacity-100 transition-opacity whitespace-nowrap">Sat: 2.8k</div>
+</div>
+<div class="w-full bg-surface-container rounded-t h-[60%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="w-full bg-surface-container rounded-t h-[45%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="w-full bg-surface-container rounded-t h-[50%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="w-full bg-surface-container rounded-t h-[75%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="w-full bg-surface-container rounded-t h-[90%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="w-full bg-surface-container rounded-t h-[30%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="w-full bg-surface-container rounded-t h-[40%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+<div class="w-full bg-surface-container rounded-t h-[55%] hover:bg-primary/40 transition-all cursor-pointer"></div>
+</div>
+<div class="flex justify-between mt-4 text-[10px] uppercase tracking-widest text-on-surface-variant font-bold px-1">
+<span>14 Days Ago</span>
+<span>Today</span>
+</div>
+</div>
+<!-- Traffic Vectors -->
+<div class="glass-card p-8 rounded-xl border border-outline-variant/10">
+<h3 class="text-xl font-bold text-white tracking-tight mb-1">Traffic Vectors</h3>
+<p class="text-on-surface-variant text-sm mb-8">Top traffic sources</p>
+<div class="space-y-6">
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-medium">
+<span class="text-on-surface">Direct Link</span>
+<span class="text-secondary">4,821</span>
+</div>
+<div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[65%] rounded-full"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-medium">
+<span class="text-on-surface">Twitter / X</span>
+<span class="text-secondary">3,492</span>
+</div>
+<div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[45%] rounded-full"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-medium">
+<span class="text-on-surface">LinkedIn</span>
+<span class="text-secondary">1,208</span>
+</div>
+<div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[20%] rounded-full"></div>
+</div>
+</div>
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-medium">
+<span class="text-on-surface">Email Campaigns</span>
+<span class="text-secondary">942</span>
+</div>
+<div class="h-2 w-full bg-surface-container-low rounded-full overflow-hidden">
+<div class="h-full bg-secondary w-[12%] rounded-full"></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Analysis Row -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+<!-- Geo Presence -->
+<div class="glass-card p-8 rounded-xl border border-outline-variant/10 flex flex-col md:flex-row gap-8">
+<div class="flex-1 space-y-4">
+<h3 class="text-xl font-bold text-white tracking-tight">Geo Presence</h3>
+<p class="text-on-surface-variant text-sm">Global click distribution across continents.</p>
+<div class="space-y-3 pt-4">
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-primary"></span> North America</div>
+<span class="text-on-surface-variant">52%</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-primary/60"></span> Europe</div>
+<span class="text-on-surface-variant">24%</span>
+</div>
+<div class="flex items-center justify-between text-sm">
+<div class="flex items-center gap-2"><span class="w-3 h-3 rounded-full bg-primary/30"></span> Asia</div>
+<span class="text-on-surface-variant">18%</span>
+</div>
+</div>
+</div>
+<div class="w-full md:w-1/2 aspect-video bg-surface-container-lowest rounded-lg relative overflow-hidden flex items-center justify-center border border-outline-variant/5">
+<img alt="World Map" class="absolute inset-0 w-full h-full object-cover opacity-40 mix-blend-luminosity" data-alt="Abstract dark world map visualization with illuminated data points" data-location="Global" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDSedfjnXRuMCn6Os-UgvM8wZ1pwItrroTfYYNSx16t4gBy45RVZ9dikXB4E9PQL6RURTdVCe30zAQU_SOM7iRbjMQ3_oY_d6Drp8u1SwELAB3J7IZWnnoxAOI4-ioF3Jnz_Jy-6ADN2HTl91bpz_PQGJsn3YVXDat7zXVqpYKsd_oNdJRhe8oJlRpkdfKUgcwuMHecdWiy-YW_RnKFumLUoztH8awUVA2tPwjeOZh8Hq053CqFNPf24mzz5_BspzU8Q0RCJe4q2Q"/>
+<div class="relative z-10 flex flex-col items-center">
+<span class="material-symbols-outlined text-4xl text-primary animate-pulse">location_on</span>
+</div>
+</div>
+</div>
+<!-- Device Matrix -->
+<div class="glass-card p-8 rounded-xl border border-outline-variant/10">
+<h3 class="text-xl font-bold text-white tracking-tight mb-8">Device Matrix</h3>
+<div class="grid grid-cols-3 gap-4">
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col items-center gap-3 border border-outline-variant/10 group hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-4xl text-[#ffb0cd]">smartphone</span>
+<div class="text-center">
+<p class="text-2xl font-bold text-white">68%</p>
+<p class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">Mobile</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col items-center gap-3 border border-outline-variant/10 group hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-4xl text-[#adc6ff]">desktop_windows</span>
+<div class="text-center">
+<p class="text-2xl font-bold text-white">28%</p>
+<p class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">Desktop</p>
+</div>
+</div>
+<div class="bg-surface-container-low p-6 rounded-xl flex flex-col items-center gap-3 border border-outline-variant/10 group hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-4xl text-[#d0bcff]">tablet_mac</span>
+<div class="text-center">
+<p class="text-2xl font-bold text-white">4%</p>
+<p class="text-[10px] uppercase font-bold tracking-widest text-on-surface-variant">Tablet</p>
+</div>
+</div>
+</div>
+<div class="mt-8 p-4 bg-surface-container-lowest rounded-lg border border-outline-variant/10">
+<div class="flex items-center gap-4">
+<div class="p-2 bg-tertiary/10 rounded-lg">
+<span class="material-symbols-outlined text-tertiary">info</span>
+</div>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                                Most of your users are visiting via <span class="text-tertiary font-bold">iOS Devices</span> in the last 48 hours. Consider optimizing your landing pages for mobile viewing.
+                            </p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB (Suppressed on Details Page based on protocol) -->
+<!-- We skip rendering the FAB as this is a "Details" screen -->
+</body></html>

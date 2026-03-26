@@ -1,0 +1,45 @@
+export const SETTINGS_PAGE_TEXT = {
+    title: "Cài đặt người dùng",
+    subtitle: "Quản lý hồ sơ định danh, thông tin bảo mật và vòng đời tài khoản.",
+    loadError: "Không thể tải thông tin hồ sơ.",
+} as const;
+
+export const PROFILE_FORM_TEXT = {
+    profileInfoTitle: "Hồ sơ định danh",
+    avatarAriaLabel: "Ảnh đại diện hồ sơ",
+    updateAvatarAriaLabel: "Cập nhật ảnh đại diện",
+    uploadingAvatar: "Đang tải ảnh đại diện...",
+    loadingAvatar: "Đang đọc ảnh đại diện...",
+    active: "Đang hoạt động",
+    inactive: "Không hoạt động",
+    providerGoogle: "Google",
+    providerLocal: "SSO doanh nghiệp",
+    emailLabel: "Địa chỉ email",
+    fullNameLabel: "Họ và tên",
+    saving: "Đang lưu...",
+    saveChanges: "Đồng bộ thay đổi",
+    changePasswordTitle: "Giao thức bảo mật",
+    newPasswordLabel: "Nhập khóa mới",
+    confirmPasswordLabel: "Xác nhận khóa bí mật",
+    passwordRule: "Khóa phải có ít nhất 16 ký tự, gồm 1 ký tự đặc biệt và 1 chữ số. Hệ thống yêu cầu xoay vòng mỗi 90 ngày.",
+    updatingPassword: "Đang cập nhật...",
+    updatePassword: "Cập nhật xác thực",
+    deleteAccountTitle: "Ngừng hoạt động tài khoản",
+    deleteAccountDescription: "Thao tác này sẽ xóa vĩnh viễn toàn bộ URL rút gọn, dữ liệu phân tích và thông tin định danh. Hành động này không thể hoàn tác.",
+    deactivateAccount: "Xóa vĩnh viễn",
+} as const;
+
+export const PROFILE_TOAST_TEXT = {
+    fullNameRequired: "Họ và tên là bắt buộc.",
+    profileUpdateSuccess: "Cập nhật hồ sơ thành công.",
+    profileUpdateFailed: "Cập nhật hồ sơ thất bại.",
+    googlePasswordUnsupported: "Tài khoản Google không hỗ trợ đổi mật khẩu tại biểu mẫu này.",
+    fillBothPasswordFields: "Vui lòng nhập đầy đủ cả hai trường mật khẩu.",
+    passwordMismatch: "Mật khẩu xác nhận không khớp.",
+    passwordUpdateSuccess: "Cập nhật mật khẩu thành công.",
+    passwordUpdateFailed: "Cập nhật mật khẩu thất bại.",
+    unsupportedFileType: "Định dạng không hỗ trợ. Vui lòng chọn JPG, PNG, WEBP hoặc GIF.",
+    avatarMaxSize: "Kích thước ảnh đại diện phải nhỏ hơn hoặc bằng 5MB.",
+    avatarUpdateSuccess: "Cập nhật ảnh đại diện thành công.",
+    avatarUpdateFailed: "Cập nhật ảnh đại diện thất bại.",
+} as const;

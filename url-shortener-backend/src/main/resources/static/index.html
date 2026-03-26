@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OAuth2 Login Success</title>
+</head>
+
+<body>
+    <h2>Login Successful!</h2>
+    <p>Below are your tokens from the URL parameters:</p>
+    <div>
+        <strong>Access Token:</strong>
+        <pre id="accessToken"
+            style="white-space: pre-wrap; word-wrap: break-word; background: #eee; padding: 10px;"></pre>
+    </div>
+    <div>
+        <strong>Refresh Token:</strong>
+        <pre id="refreshToken"
+            style="white-space: pre-wrap; word-wrap: break-word; background: #eee; padding: 10px;"></pre>
+    </div>
+
+    <script>
+        const urlParams = new URLSearchParams(window.location.search);
+        const token = urlParams.get('token');
+        const refresh = urlParams.get('refresh');
+
+        if (token) document.getElementById('accessToken').textContent = token;
+        if (refresh) document.getElementById('refreshToken').textContent = refresh;
+
+        // Optionally, store these in localStorage if you are testing frontend flows
+        if (token) localStorage.setItem("token", token);
+        if (refresh) localStorage.setItem("refreshToken", refresh);
+    </script>
+</body>
+
+</html>

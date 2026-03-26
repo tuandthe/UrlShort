@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <title>Your Weekly UrlShort Report</title>
+</head>
+<body style="margin:0;padding:0;background:#f1f5f9;font-family:'Segoe UI',Inter,system-ui,sans-serif;">
+  <table width="100%" cellpadding="0" cellspacing="0" style="background:#f1f5f9;padding:32px 0;">
+    <tr>
+      <td align="center">
+        <table width="600" cellpadding="0" cellspacing="0" style="max-width:600px;width:100%;">
+
+          <!-- Header -->
+          <tr>
+            <td style="background:linear-gradient(135deg,#2563eb,#7c3aed);border-radius:12px 12px 0 0;padding:36px 40px;text-align:center;">
+              <div style="font-size:28px;font-weight:700;color:#ffffff;">🔗 UrlShort</div>
+              <div style="color:#bfdbfe;font-size:14px;margin-top:4px;">Weekly analytics report</div>
+            </td>
+          </tr>
+
+          <!-- Body -->
+          <tr>
+            <td style="background:#ffffff;padding:40px;border-left:1px solid #e2e8f0;border-right:1px solid #e2e8f0;">
+              <h1 style="font-size:22px;font-weight:600;color:#0f172a;margin:0 0 8px;">Your Weekly Report 📊</h1>
+              <p style="color:#475569;font-size:15px;margin:0 0 28px;">
+                Hi <strong th:text="${fullName}">User</strong>, here's a summary of your link performance this week.
+              </p>
+
+              <!-- Stats table -->
+              <table width="100%" cellpadding="0" cellspacing="0"
+                     style="border-collapse:collapse;border:1px solid #e2e8f0;border-radius:8px;overflow:hidden;margin-bottom:28px;">
+                <!-- Table header -->
+                <tr style="background:#f8fafc;">
+                  <th style="text-align:left;padding:12px 16px;font-size:12px;font-weight:600;color:#64748b;border-bottom:1px solid #e2e8f0;">SHORT LINK</th>
+                  <th style="text-align:right;padding:12px 16px;font-size:12px;font-weight:600;color:#64748b;border-bottom:1px solid #e2e8f0;">CLICKS</th>
+                  <th style="text-align:right;padding:12px 16px;font-size:12px;font-weight:600;color:#64748b;border-bottom:1px solid #e2e8f0;">TOTAL</th>
+                </tr>
+                <!-- Stats rows -->
+                <tr th:each="stat, iterStat : ${urlStats}"
+                    th:style="${iterStat.odd} ? 'background:#f8fafc;' : 'background:#ffffff;'">
+                  <td style="padding:12px 16px;font-size:14px;color:#0f172a;font-family:monospace;"
+                      th:text="'/' + ${stat.shortCode}">
+                  </td>
+                  <td style="padding:12px 16px;font-size:14px;color:#2563eb;text-align:right;font-weight:600;"
+                      th:text="${stat.weeklyClicks}">
+                  </td>
+                  <td style="padding:12px 16px;font-size:14px;color:#64748b;text-align:right;"
+                      th:text="${stat.totalClicks}">
+                  </td>
+                </tr>
+                <!-- Empty state -->
+                <tr th:if="${#lists.isEmpty(urlStats)}">
+                  <td colspan="3" style="padding:24px;text-align:center;color:#94a3b8;font-size:14px;">
+                    No links created yet. <a th:href="${analyticsUrl}" href="#" style="color:#2563eb;">Create your first link</a>.
+                  </td>
+                </tr>
+              </table>
+
+              <!-- CTA -->
+              <div style="text-align:center;">
+                <a th:href="${analyticsUrl}" href="#"
+                   style="display:inline-block;background:#2563eb;color:#ffffff;font-size:15px;font-weight:600;text-decoration:none;padding:14px 36px;border-radius:8px;">
+                  View Full Analytics →
+                </a>
+              </div>
+            </td>
+          </tr>
+
+          <!-- Footer -->
+          <tr>
+            <td style="background:#f8fafc;border:1px solid #e2e8f0;border-top:none;border-radius:0 0 12px 12px;padding:20px 40px;text-align:center;">
+              <p style="color:#94a3b8;font-size:12px;margin:0;">
+                © 2026 <span th:text="${appName}">UrlShort</span>. All rights reserved.<br/>
+                You are receiving this email because you have an account with UrlShort.
+              </p>
+            </td>
+          </tr>
+
+        </table>
+      </td>
+    </tr>
+  </table>
+</body>
+</html>

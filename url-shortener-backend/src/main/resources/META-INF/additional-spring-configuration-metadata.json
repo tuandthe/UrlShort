@@ -1,0 +1,54 @@
+{
+  "properties": [
+    {
+      "name": "app.jwtSecret",
+      "type": "java.lang.String",
+      "description": "Secret key (Base64 encoded) for signing JWT tokens"
+    },
+    {
+      "name": "app.jwtExpirationMs",
+      "type": "java.lang.Integer",
+      "description": "JWT token expiration time in milliseconds"
+    },
+    {
+      "name": "app.jwtRefreshExpirationMs",
+      "type": "java.lang.Integer",
+      "description": "JWT refresh token expiration time in milliseconds"
+    },
+    {
+      "name": "app.oauth2.authorizedRedirectUri",
+      "type": "java.lang.String",
+      "description": "Authorized redirect URIs for OAuth2 login"
+    },
+    {
+      "name": "spring.flyway.enabled",
+      "type": "java.lang.Boolean",
+      "description": "Whether to enable Flyway migration"
+    },
+    {
+      "name": "spring.flyway.locations",
+      "type": "java.util.List<java.lang.String>",
+      "description": "Locations of migrations scripts"
+    },
+    {
+      "name": "spring.flyway.baseline-on-migrate",
+      "type": "java.lang.Boolean",
+      "description": "Whether to automatically call baseline when migrate is executed against a non-empty schema with no metadata table"
+    },
+    {
+      "name": "app.base-url",
+      "type": "java.lang.String",
+      "description": "A description for 'app.base-url'"
+    },
+    {
+      "name": "app.cors",
+      "type": "java.lang.String",
+      "description": "A description for 'app.cors'"
+    },
+    {
+      "name": "app.cors.allowed-origins",
+      "type": "java.lang.String",
+      "description": "A description for 'app.cors.allowed-origins'"
+    }
+  ]
+}

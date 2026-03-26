@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#23005c",
+              "on-primary": "#3c0091",
+              "on-primary-fixed-variant": "#5516be",
+              "inverse-on-surface": "#293040",
+              "on-primary-container": "#340080",
+              "secondary-fixed-dim": "#adc6ff",
+              "tertiary": "#ffb0cd",
+              "tertiary-fixed-dim": "#ffb0cd",
+              "surface-dim": "#0c1322",
+              "surface-container-high": "#232a3a",
+              "surface-bright": "#323949",
+              "on-error": "#690005",
+              "on-surface-variant": "#cbc3d7",
+              "on-surface": "#dce2f7",
+              "outline-variant": "#494454",
+              "primary": "#d0bcff",
+              "on-secondary-container": "#e6ecff",
+              "secondary-fixed": "#d8e2ff",
+              "surface-container": "#191f2f",
+              "tertiary-fixed": "#ffd9e4",
+              "on-background": "#dce2f7",
+              "surface-container-lowest": "#070e1d",
+              "error": "#ffb4ab",
+              "surface-variant": "#2e3545",
+              "on-secondary-fixed": "#001a42",
+              "primary-fixed-dim": "#d0bcff",
+              "surface-container-low": "#141b2b",
+              "surface": "#0c1322",
+              "surface-tint": "#d0bcff",
+              "on-tertiary-fixed": "#3e0022",
+              "primary-container": "#a078ff",
+              "on-tertiary-fixed-variant": "#8c0053",
+              "primary-fixed": "#e9ddff",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#004395",
+              "outline": "#958ea0",
+              "on-tertiary": "#640039",
+              "on-tertiary-container": "#570032",
+              "inverse-primary": "#6d3bd7",
+              "error-container": "#93000a",
+              "secondary-container": "#0566d9",
+              "on-secondary": "#002e6a",
+              "tertiary-container": "#f751a1",
+              "inverse-surface": "#dce2f7",
+              "background": "#0c1322",
+              "surface-container-highest": "#2e3545",
+              "secondary": "#adc6ff"
+            },
+            fontFamily: {
+              "headline": ["Inter"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .glass-card {
+        background: rgba(25, 31, 47, 0.4);
+        backdrop-filter: blur(12px);
+      }
+      .glowing-primary {
+        box-shadow: 0 0 20px rgba(208, 188, 255, 0.2);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface font-body selection:bg-primary/30">
+<!-- TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0c1322]/80 backdrop-blur-xl flex justify-between items-center px-6 h-16 w-full shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] font-['Inter'] antialiased tracking-tight">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-white bg-clip-text bg-gradient-to-br from-[#d0bcff] to-[#a078ff]">UrlShort</span>
+<div class="hidden md:flex gap-6 items-center">
+<a class="text-[#cbc3d7] hover:text-white transition-colors duration-200" href="#">Docs</a>
+<a class="text-[#cbc3d7] hover:text-white transition-colors duration-200" href="#">API</a>
+<a class="text-[#cbc3d7] hover:text-white transition-colors duration-200" href="#">Pricing</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="active:scale-95 transition-transform text-[#cbc3d7] hover:text-white p-2">
+<span class="material-symbols-outlined">notifications</span>
+</button>
+<button class="active:scale-95 transition-transform text-[#cbc3d7] hover:text-white p-2">
+<span class="material-symbols-outlined">help</span>
+</button>
+<div class="w-8 h-8 rounded-full bg-surface-container-highest flex items-center justify-center overflow-hidden ml-2 ring-1 ring-outline-variant/30">
+<img alt="User avatar" data-alt="Abstract user profile placeholder" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5gIDBBb-RXan3lfLcg_YxyLyPRO1CifrGHDtxGUdf9JTuO-Cl7InACG2GEnv2-cIV3eWI-YgU6QWEm9egJfTGS_EO0gwzKbRqHUzvW9ZDNzUflVvXQyLCeD4k5xdu66Zfv7vRY2LFZnwn1heRAecZrD9gy7nSWA1oBhwLR5f9B_O8Z1DfBSi6ovEEiMEa5NYqPir00g3dTNqMvDyhzhtcsWDn8Cv9LA9wUgDAn_tr9QTc_UmPU1DmnfNJeIJ8_Lb5jaMFKkMB5Q"/>
+</div>
+</div>
+</nav>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-64 z-40 bg-[#070e1d] flex flex-col p-4 gap-2 font-['Inter'] text-sm font-medium hidden lg:flex pt-20">
+<div class="flex flex-col gap-1 mb-8">
+<span class="text-xs uppercase tracking-[0.2em] text-outline px-4 mb-2">Main Menu</span>
+<a class="flex items-center gap-3 px-4 py-3 text-[#cbc3d7] hover:bg-[#191f2f]/50 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>
+                Overview
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#191f2f] text-[#d0bcff] rounded-lg shadow-[0_0_15px_rgba(208,188,255,0.1)]" href="#">
+<span class="material-symbols-outlined">link</span>
+                My URLs
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#cbc3d7] hover:bg-[#191f2f]/50 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>
+                Analytics
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#cbc3d7] hover:bg-[#191f2f]/50 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">admin_panel_settings</span>
+                Admin
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#cbc3d7] hover:bg-[#191f2f]/50 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">settings</span>
+                Settings
+            </a>
+</div>
+<button class="mt-4 mx-2 bg-gradient-to-br from-[#d0bcff] to-[#a078ff] text-on-primary-container font-bold py-3 px-4 rounded-xl active:scale-95 transition-transform shadow-[0_0_20px_rgba(208,188,255,0.2)]">
+            Create New Link
+        </button>
+<div class="mt-auto flex flex-col gap-1 border-t border-outline-variant/10 pt-4">
+<a class="flex items-center gap-3 px-4 py-3 text-[#cbc3d7] hover:bg-[#191f2f]/50 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">menu_book</span>
+                Documentation
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#cbc3d7] hover:bg-[#191f2f]/50 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">contact_support</span>
+                Support
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="lg:ml-64 pt-24 px-6 pb-12 min-h-screen">
+<div class="max-w-7xl mx-auto">
+<!-- Page Header -->
+<header class="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-12">
+<div class="space-y-1">
+<span class="text-primary font-label text-xs uppercase tracking-[0.2em]">Dashboard / Links</span>
+<h1 class="text-4xl md:text-5xl font-extrabold tracking-tight text-white">My URLs</h1>
+</div>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 rounded-xl bg-surface-container-high border border-outline-variant/20 text-on-surface hover:bg-surface-variant transition-colors active:scale-95">
+<span class="material-symbols-outlined text-lg">download</span>
+                        Export
+                    </button>
+<button class="flex items-center gap-2 px-6 py-2.5 rounded-xl bg-gradient-to-br from-primary to-primary-container text-on-primary-container font-bold transition-all active:scale-95 glowing-primary">
+<span class="material-symbols-outlined">add</span>
+                        Create New Link
+                    </button>
+</div>
+</header>
+<!-- Filters & Controls -->
+<div class="flex flex-col md:flex-row gap-4 mb-8 items-center justify-between">
+<div class="relative w-full md:w-96 group">
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-outline group-focus-within:text-primary transition-colors">search</span>
+<input class="w-full bg-surface-container-low border-0 rounded-xl py-3 pl-12 pr-4 text-on-surface focus:ring-2 focus:ring-primary/40 transition-all placeholder:text-outline/50" placeholder="Search destinations or slugs..." type="text"/>
+</div>
+<div class="flex items-center gap-3 w-full md:w-auto overflow-x-auto pb-2 md:pb-0">
+<div class="flex items-center gap-2 bg-surface-container-low p-1.5 rounded-xl">
+<button class="px-4 py-1.5 rounded-lg bg-surface-container-high text-primary text-sm font-medium">All</button>
+<button class="px-4 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface text-sm font-medium transition-colors">Active</button>
+<button class="px-4 py-1.5 rounded-lg text-on-surface-variant hover:text-on-surface text-sm font-medium transition-colors">Expired</button>
+</div>
+<div class="h-8 w-px bg-outline-variant/20 mx-1"></div>
+<button class="flex items-center gap-2 px-4 py-2.5 rounded-xl bg-surface-container-low text-on-surface hover:bg-surface-container transition-colors">
+<span class="material-symbols-outlined text-lg">filter_list</span>
+                        Sort by: Newest
+                    </button>
+</div>
+</div>
+<!-- Data Table (Glassmorphism Pattern) -->
+<div class="overflow-x-auto rounded-2xl shadow-2xl">
+<table class="w-full border-collapse text-left">
+<thead>
+<tr class="bg-surface-container-lowest/50 text-xs uppercase tracking-widest text-outline">
+<th class="px-6 py-5 font-bold">Short Link</th>
+<th class="px-6 py-5 font-bold">Original Destination</th>
+<th class="px-6 py-5 font-bold text-center">Status</th>
+<th class="px-6 py-5 font-bold text-center">Clicks</th>
+<th class="px-6 py-5 font-bold">Created</th>
+<th class="px-6 py-5 font-bold text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-outline-variant/10">
+<!-- Row 1 -->
+<tr class="glass-card hover:bg-surface-container-high/60 transition-colors group">
+<td class="px-6 py-6">
+<div class="flex items-center gap-2">
+<span class="font-mono text-primary font-bold">url.sh/vivid-neon</span>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+</td>
+<td class="px-6 py-6">
+<div class="flex flex-col max-w-xs overflow-hidden">
+<span class="text-on-surface truncate font-medium">https://campaigns.marketing.io/winter-collection-2024/referral-id-8821</span>
+<span class="text-xs text-on-surface-variant/60 truncate">Updated 2h ago</span>
+</div>
+</td>
+<td class="px-6 py-6 text-center">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-secondary-container/20 text-secondary border border-secondary/20 shadow-[0_0_12px_rgba(5,102,217,0.15)]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary animate-pulse"></span>
+                                    Active
+                                </span>
+</td>
+<td class="px-6 py-6 text-center">
+<span class="font-mono font-bold text-lg text-white">12,402</span>
+</td>
+<td class="px-6 py-6">
+<span class="text-sm text-on-surface-variant">Oct 12, 2023</span>
+</td>
+<td class="px-6 py-6 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-primary/10 transition-all" title="Analytics">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-primary/10 transition-all" title="Edit">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-error hover:bg-error/10 transition-all" title="Delete">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="glass-card hover:bg-surface-container-high/60 transition-colors group">
+<td class="px-6 py-6">
+<div class="flex items-center gap-2">
+<span class="font-mono text-primary font-bold">url.sh/beta-test</span>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+</td>
+<td class="px-6 py-6">
+<div class="flex flex-col max-w-xs">
+<span class="text-on-surface truncate font-medium">https://docs.api-internal.dev/v3/beta/overview</span>
+<span class="text-xs text-on-surface-variant/60 truncate">Internal API route</span>
+</div>
+</td>
+<td class="px-6 py-6 text-center">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-error-container/20 text-error border border-error/20">
+<span class="w-1.5 h-1.5 rounded-full bg-error"></span>
+                                    Expired
+                                </span>
+</td>
+<td class="px-6 py-6 text-center">
+<span class="font-mono font-bold text-lg text-white">432</span>
+</td>
+<td class="px-6 py-6">
+<span class="text-sm text-on-surface-variant">Sep 28, 2023</span>
+</td>
+<td class="px-6 py-6 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-error hover:bg-error/10 transition-all">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="glass-card hover:bg-surface-container-high/60 transition-colors group">
+<td class="px-6 py-6">
+<div class="flex items-center gap-2">
+<span class="font-mono text-primary font-bold">url.sh/launch-day</span>
+<button class="text-outline hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm">content_copy</span>
+</button>
+</div>
+</td>
+<td class="px-6 py-6">
+<div class="flex flex-col max-w-xs">
+<span class="text-on-surface truncate font-medium">https://producthunt.com/posts/urlshort-v3</span>
+<span class="text-xs text-on-surface-variant/60">Social Traffic Only</span>
+</div>
+</td>
+<td class="px-6 py-6 text-center">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold bg-secondary-container/20 text-secondary border border-secondary/20 shadow-[0_0_12px_rgba(5,102,217,0.15)]">
+<span class="w-1.5 h-1.5 rounded-full bg-secondary"></span>
+                                    Active
+                                </span>
+</td>
+<td class="px-6 py-6 text-center">
+<span class="font-mono font-bold text-lg text-white">2,891</span>
+</td>
+<td class="px-6 py-6">
+<span class="text-sm text-on-surface-variant">Aug 05, 2023</span>
+</td>
+<td class="px-6 py-6 text-right">
+<div class="flex items-center justify-end gap-1">
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined">analytics</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-primary hover:bg-primary/10 transition-all">
+<span class="material-symbols-outlined">edit</span>
+</button>
+<button class="p-2 rounded-lg text-on-surface-variant hover:text-error hover:bg-error/10 transition-all">
+<span class="material-symbols-outlined">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+<!-- Pagination -->
+<footer class="mt-10 flex flex-col md:flex-row items-center justify-between gap-6 px-4">
+<span class="text-sm text-on-surface-variant">Showing <span class="text-white font-medium">1-10</span> of <span class="text-white font-medium">42</span> links</span>
+<div class="flex items-center gap-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-white transition-colors disabled:opacity-30" disabled="">
+<span class="material-symbols-outlined">chevron_left</span>
+</button>
+<div class="flex items-center gap-1 mx-2">
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-primary text-on-primary-container font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">3</button>
+<span class="px-2 text-outline">...</span>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl text-on-surface-variant hover:bg-surface-container-high transition-colors">5</button>
+</div>
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-white transition-colors">
+<span class="material-symbols-outlined">chevron_right</span>
+</button>
+</div>
+</footer>
+<!-- Bottom Floating Quick Stats (Bento Component) -->
+<div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
+<div class="glass-card p-6 rounded-2xl border border-outline-variant/5">
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-label uppercase tracking-widest text-outline">Total Redirections</span>
+<span class="material-symbols-outlined text-primary">trending_up</span>
+</div>
+<div class="text-3xl font-extrabold text-white">184,209</div>
+<div class="text-xs text-secondary mt-2">+12.4% from last month</div>
+</div>
+<div class="glass-card p-6 rounded-2xl border border-outline-variant/5">
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-label uppercase tracking-widest text-outline">Active Campaigns</span>
+<span class="material-symbols-outlined text-primary">rocket_launch</span>
+</div>
+<div class="text-3xl font-extrabold text-white">14</div>
+<div class="text-xs text-on-surface-variant mt-2">Across 3 platforms</div>
+</div>
+<div class="glass-card p-6 rounded-2xl border border-outline-variant/5">
+<div class="flex items-center justify-between mb-4">
+<span class="text-xs font-label uppercase tracking-widest text-outline">Top Region</span>
+<span class="material-symbols-outlined text-primary">public</span>
+</div>
+<div class="text-3xl font-extrabold text-white">US West</div>
+<div class="text-xs text-on-surface-variant mt-2">42% of total traffic</div>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual FAB for Mobile (Suppressed per rule on Details/Admin, but rendered here as primary destination) -->
+<button class="fixed bottom-6 right-6 lg:hidden w-16 h-16 rounded-full bg-gradient-to-br from-primary to-primary-container text-on-primary-container shadow-2xl flex items-center justify-center active:scale-95 transition-transform z-50 glowing-primary">
+<span class="material-symbols-outlined text-3xl">add</span>
+</button>
+</body></html>

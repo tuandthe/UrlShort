@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-primary-fixed": "#23005c",
+              "on-primary": "#3c0091",
+              "on-primary-fixed-variant": "#5516be",
+              "inverse-on-surface": "#293040",
+              "on-primary-container": "#340080",
+              "secondary-fixed-dim": "#adc6ff",
+              "tertiary": "#ffb0cd",
+              "tertiary-fixed-dim": "#ffb0cd",
+              "surface-dim": "#0c1322",
+              "surface-container-high": "#232a3a",
+              "surface-bright": "#323949",
+              "on-error": "#690005",
+              "on-surface-variant": "#cbc3d7",
+              "on-surface": "#dce2f7",
+              "outline-variant": "#494454",
+              "primary": "#d0bcff",
+              "on-secondary-container": "#e6ecff",
+              "secondary-fixed": "#d8e2ff",
+              "surface-container": "#191f2f",
+              "tertiary-fixed": "#ffd9e4",
+              "on-background": "#dce2f7",
+              "surface-container-lowest": "#070e1d",
+              "error": "#ffb4ab",
+              "surface-variant": "#2e3545",
+              "on-secondary-fixed": "#001a42",
+              "primary-fixed-dim": "#d0bcff",
+              "surface-container-low": "#141b2b",
+              "surface": "#0c1322",
+              "surface-tint": "#d0bcff",
+              "on-tertiary-fixed": "#3e0022",
+              "primary-container": "#a078ff",
+              "on-tertiary-fixed-variant": "#8c0053",
+              "primary-fixed": "#e9ddff",
+              "on-error-container": "#ffdad6",
+              "on-secondary-fixed-variant": "#004395",
+              "outline": "#958ea0",
+              "on-tertiary": "#640039",
+              "on-tertiary-container": "#570032",
+              "inverse-primary": "#6d3bd7",
+              "error-container": "#93000a",
+              "secondary-container": "#0566d9",
+              "on-secondary": "#002e6a",
+              "tertiary-container": "#f751a1",
+              "inverse-surface": "#dce2f7",
+              "background": "#0c1322",
+              "surface-container-highest": "#2e3545",
+              "secondary": "#adc6ff"
+            },
+            fontFamily: {
+              "headline": ["Inter", "sans-serif"],
+              "body": ["Inter", "sans-serif"],
+              "label": ["Inter", "sans-serif"]
+            },
+            borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+      body { background-color: #0c1322; color: #dce2f7; font-family: 'Inter', sans-serif; }
+      .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; }
+      .glass-input { background: rgba(25, 31, 47, 0.5); backdrop-filter: blur(8px); }
+    </style>
+</head>
+<body class="antialiased selection:bg-primary/30">
+<!-- TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0c1322]/80 backdrop-blur-xl shadow-[0_8px_32px_0_rgba(0,0,0,0.3)] font-['Inter'] antialiased tracking-tight">
+<div class="flex justify-between items-center px-6 h-16 w-full max-w-[1600px] mx-auto">
+<div class="flex items-center gap-8">
+<span class="text-xl font-bold tracking-tighter text-white bg-clip-text bg-gradient-to-br from-[#d0bcff] to-[#a078ff]">UrlShort</span>
+<nav class="hidden md:flex gap-6 items-center">
+<a class="text-[#cbc3d7] hover:text-white transition-colors duration-200" href="#">Docs</a>
+<a class="text-[#cbc3d7] hover:text-white transition-colors duration-200" href="#">API</a>
+<a class="text-[#cbc3d7] hover:text-white transition-colors duration-200" href="#">Pricing</a>
+</nav>
+</div>
+<div class="flex items-center gap-4">
+<button class="material-symbols-outlined text-[#cbc3d7] hover:text-white transition-colors">notifications</button>
+<button class="material-symbols-outlined text-[#cbc3d7] hover:text-white transition-colors">help</button>
+<div class="w-8 h-8 rounded-full overflow-hidden bg-surface-container border border-outline-variant/20">
+<img alt="User avatar" data-alt="Abstract user profile placeholder illustration" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDoPAHFDC9kUVPTuXmqjuJDInY2tefm2SIaIjRyntP1ZqN9mFecKKa8p2s97I3uEPpxCkeVkaJI6FhHT-AcqCMpPknvWiQOPp4nzzKbk8FKeuQSeEKMHuEOaDqVMjzicYqr-epb3_jp30JdDEm9jy2wNZ3UffXGi5oqQxACfCbHBrTch_U8Rm6qDIGyJZFZM22M-KcNoSb_ZraPUm-iqq7ofYyGXCJ8e1bBVuhHawjIXpAMq3hFpxF3OyFDU165AFYzxoHLkpSNjg"/>
+</div>
+</div>
+</div>
+</header>
+<!-- SideNavBar -->
+<aside class="fixed left-0 top-0 h-screen w-64 z-40 bg-[#070e1d] flex flex-col p-4 gap-2 font-['Inter'] text-sm font-medium pt-20">
+<div class="flex-1 space-y-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#cbc3d7] hover:bg-[#191f2f]/50 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">dashboard</span>Overview
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#cbc3d7] hover:bg-[#191f2f]/50 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">link</span>My URLs
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#cbc3d7] hover:bg-[#191f2f]/50 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">analytics</span>Analytics
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#cbc3d7] hover:bg-[#191f2f]/50 hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">admin_panel_settings</span>Admin
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#191f2f] text-[#d0bcff] rounded-lg shadow-[0_0_15px_rgba(208,188,255,0.1)]" href="#">
+<span class="material-symbols-outlined">settings</span>Settings
+            </a>
+</div>
+<div class="pt-4 border-t border-outline-variant/10 flex flex-col gap-1">
+<a class="flex items-center gap-3 px-4 py-3 text-[#cbc3d7] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">menu_book</span>Documentation
+            </a>
+<a class="flex items-center gap-3 px-4 py-3 text-[#cbc3d7] hover:text-white transition-all" href="#">
+<span class="material-symbols-outlined">contact_support</span>Support
+            </a>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="ml-64 pt-24 pb-12 px-8 min-h-screen">
+<div class="max-w-6xl mx-auto">
+<!-- Header Section -->
+<header class="mb-12">
+<span class="text-primary text-xs font-bold tracking-[0.2em] uppercase mb-2 block">Configuration</span>
+<h1 class="text-4xl font-extrabold tracking-tight text-on-surface mb-2">User Settings</h1>
+<p class="text-on-surface-variant max-w-2xl">Manage your identity profiles, security credentials, and account lifecycle preferences.</p>
+</header>
+<!-- 2-Column Grid Layout -->
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-start">
+<!-- 1) Identity Profile -->
+<section class="bg-surface-container p-8 rounded-xl shadow-sm space-y-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-8xl">fingerprint</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="relative group">
+<div class="w-20 h-20 rounded-2xl bg-gradient-to-br from-primary to-primary-container p-0.5 shadow-lg shadow-primary/20">
+<div class="w-full h-full rounded-[14px] bg-surface overflow-hidden">
+<img alt="Identity Avatar" class="w-full h-full object-cover" data-alt="Sophisticated person avatar with minimalist geometric background" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCNy5TWeSioMgqcGHL5l3eRPNfbgBJe2GSeIhNzvAHW7T5EZjeaOoOBExvhAQRVUJiGFmJoggkf3G91H4LZcEI9XzEP7karv33rDxvekNrn6xO3ovAB4Z0Jj06MfPohOpHzifm7-N_k4fppFNqrxTZGb1SAYizYbOaofGt844iaAoFx5ucIHi69nbfn6H-O3eXnPyoq2TWmIM8Y5L1Oq3Rhn7WoJnit8tI3b95be2xUUJU1cyW2bLaWXAJfpNB_5z06q2LyWvTWqA"/>
+</div>
+</div>
+<button class="absolute -bottom-2 -right-2 bg-surface-container-highest border border-outline-variant/20 p-1.5 rounded-lg text-primary shadow-xl">
+<span class="material-symbols-outlined text-sm">edit</span>
+</button>
+</div>
+<div>
+<h2 class="text-xl font-bold text-on-surface">Identity Profile</h2>
+<p class="text-sm text-on-surface-variant">Global system identifier</p>
+</div>
+</div>
+<div class="space-y-5">
+<div class="space-y-2">
+<label class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant/70 ml-1">Email Address</label>
+<div class="flex items-center gap-3 px-4 py-3 rounded-lg bg-surface-container-lowest border border-outline-variant/10 text-on-surface-variant cursor-not-allowed">
+<span class="material-symbols-outlined text-sm">alternate_email</span>
+<span class="font-medium">john.dev@enterprise.io</span>
+<span class="ml-auto text-[10px] bg-outline-variant/20 px-2 py-0.5 rounded text-on-surface-variant">READ ONLY</span>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant/70 ml-1">Full Name</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant/50">person</span>
+<input class="w-full pl-12 pr-4 py-3 glass-input rounded-lg border border-outline-variant/10 focus:border-primary/40 focus:ring-2 focus:ring-primary/10 transition-all text-on-surface outline-none" type="text" value="Johnathan Developer"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant/70 ml-1">Auth Provider</label>
+<div class="flex items-center gap-3 px-4 py-2 rounded-full w-fit bg-secondary-container/20 border border-secondary/20 text-secondary">
+<span class="material-symbols-outlined text-sm" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+<span class="text-sm font-bold tracking-tight">Enterprise SSO Active</span>
+</div>
+</div>
+</div>
+<button class="w-full py-4 bg-gradient-to-r from-primary to-primary-container text-on-primary-container font-bold rounded-lg shadow-lg hover:shadow-primary/30 active:scale-[0.98] transition-all flex justify-center items-center gap-2">
+<span class="material-symbols-outlined">sync</span>
+                        Synchronize Changes
+                    </button>
+</section>
+<!-- 2) Security Protocol -->
+<section class="bg-surface-container p-8 rounded-xl shadow-sm space-y-8 relative overflow-hidden">
+<div class="absolute top-0 right-0 p-8 opacity-10">
+<span class="material-symbols-outlined text-8xl">shield</span>
+</div>
+<div class="flex items-center gap-6">
+<div class="w-12 h-12 rounded-xl bg-surface-container-high flex items-center justify-center text-primary border border-outline-variant/10">
+<span class="material-symbols-outlined">key</span>
+</div>
+<div>
+<h2 class="text-xl font-bold text-on-surface">Security Protocol</h2>
+<p class="text-sm text-on-surface-variant">Credential rotation</p>
+</div>
+</div>
+<div class="space-y-5">
+<div class="space-y-2">
+<label class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant/70 ml-1">Enter New Key</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant/50">lock</span>
+<input class="w-full pl-12 pr-4 py-3 glass-input rounded-lg border border-outline-variant/10 focus:border-secondary/40 focus:ring-2 focus:ring-secondary/10 transition-all text-on-surface outline-none" placeholder="••••••••••••" type="password"/>
+</div>
+</div>
+<div class="space-y-2">
+<label class="text-xs font-semibold uppercase tracking-widest text-on-surface-variant/70 ml-1">Confirm Secret Key</label>
+<div class="relative">
+<span class="absolute left-4 top-1/2 -translate-y-1/2 material-symbols-outlined text-on-surface-variant/50">lock_reset</span>
+<input class="w-full pl-12 pr-4 py-3 glass-input rounded-lg border border-outline-variant/10 focus:border-secondary/40 focus:ring-2 focus:ring-secondary/10 transition-all text-on-surface outline-none" placeholder="••••••••••••" type="password"/>
+</div>
+</div>
+<div class="p-4 bg-surface-container-lowest border border-outline-variant/5 rounded-lg">
+<div class="flex gap-3">
+<span class="material-symbols-outlined text-tertiary">info</span>
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                                    Keys must contain at least 16 characters, including 1 symbol and 1 numerical value. Rotation is forced every 90 days.
+                                </p>
+</div>
+</div>
+</div>
+<button class="w-full py-4 bg-surface-container-highest text-primary font-bold rounded-lg border border-outline-variant/10 hover:bg-surface-variant transition-all active:scale-[0.98] flex justify-center items-center gap-2">
+<span class="material-symbols-outlined text-sm">security</span>
+                        Update Authentication
+                    </button>
+</section>
+</div>
+<!-- Decommission Account -->
+<section class="mt-8 bg-surface-container-low border border-error/10 p-8 rounded-xl overflow-hidden relative group">
+<div class="absolute -right-4 -bottom-4 opacity-5 group-hover:opacity-10 transition-opacity">
+<span class="material-symbols-outlined text-[12rem] text-error">dangerous</span>
+</div>
+<div class="flex flex-col md:flex-row items-center justify-between gap-8 relative z-10">
+<div class="space-y-2 max-w-xl text-center md:text-left">
+<h2 class="text-xl font-bold text-error flex items-center gap-2 justify-center md:justify-start">
+<span class="material-symbols-outlined">warning</span>
+                            Decommission Account
+                        </h2>
+<p class="text-on-surface-variant text-sm">
+                            Initiating a self-destruct sequence will permanently purge all shortened URLs, analytical metadata, and identity records. This action is <span class="text-error font-bold">irreversible</span>.
+                        </p>
+</div>
+<button class="px-8 py-4 bg-error-container text-on-error-container font-black tracking-tighter uppercase rounded-lg shadow-lg shadow-error/10 hover:bg-error hover:text-on-error transition-all active:scale-95 flex items-center gap-3">
+<span class="material-symbols-outlined">bolt</span>
+                        Self Destruct
+                    </button>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-[#0c1322]/95 backdrop-blur-xl flex justify-around items-center px-4 h-16 z-50 shadow-[0_-8px_32px_0_rgba(0,0,0,0.3)]">
+<button class="flex flex-col items-center gap-1 text-[#cbc3d7]">
+<span class="material-symbols-outlined">dashboard</span>
+<span class="text-[10px] font-medium">Home</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#cbc3d7]">
+<span class="material-symbols-outlined">link</span>
+<span class="text-[10px] font-medium">URLs</span>
+</button>
+<button class="flex flex-col items-center gap-1 text-[#d0bcff] font-semibold">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">settings</span>
+<span class="text-[10px] font-medium">Settings</span>
+</button>
+</nav>
+</body></html>

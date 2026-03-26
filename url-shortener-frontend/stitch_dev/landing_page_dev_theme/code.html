@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            line-height: 1;
+            text-transform: none;
+            letter-spacing: normal;
+            word-wrap: normal;
+            white-space: nowrap;
+            direction: ltr;
+        }
+        body { font-family: 'Inter', sans-serif; }
+        .glass-panel {
+            backdrop-filter: blur(12px);
+            background: rgba(25, 31, 47, 0.3);
+        }
+        .text-gradient {
+            background: linear-gradient(135deg, #d0bcff 0%, #a078ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-primary-fixed": "#23005c",
+                        "on-primary": "#3c0091",
+                        "on-primary-fixed-variant": "#5516be",
+                        "inverse-on-surface": "#293040",
+                        "on-primary-container": "#340080",
+                        "secondary-fixed-dim": "#adc6ff",
+                        "tertiary": "#ffb0cd",
+                        "tertiary-fixed-dim": "#ffb0cd",
+                        "surface-dim": "#0c1322",
+                        "surface-container-high": "#232a3a",
+                        "surface-bright": "#323949",
+                        "on-error": "#690005",
+                        "on-surface-variant": "#cbc3d7",
+                        "on-surface": "#dce2f7",
+                        "outline-variant": "#494454",
+                        "primary": "#d0bcff",
+                        "on-secondary-container": "#e6ecff",
+                        "secondary-fixed": "#d8e2ff",
+                        "surface-container": "#191f2f",
+                        "tertiary-fixed": "#ffd9e4",
+                        "on-background": "#dce2f7",
+                        "surface-container-lowest": "#070e1d",
+                        "error": "#ffb4ab",
+                        "surface-variant": "#2e3545",
+                        "on-secondary-fixed": "#001a42",
+                        "primary-fixed-dim": "#d0bcff",
+                        "surface-container-low": "#141b2b",
+                        "surface": "#0c1322",
+                        "surface-tint": "#d0bcff",
+                        "on-tertiary-fixed": "#3e0022",
+                        "primary-container": "#a078ff",
+                        "on-tertiary-fixed-variant": "#8c0053",
+                        "primary-fixed": "#e9ddff",
+                        "on-error-container": "#ffdad6",
+                        "on-secondary-fixed-variant": "#004395",
+                        "outline": "#958ea0",
+                        "on-tertiary": "#640039",
+                        "on-tertiary-container": "#570032",
+                        "inverse-primary": "#6d3bd7",
+                        "error-container": "#93000a",
+                        "secondary-container": "#0566d9",
+                        "on-secondary": "#002e6a",
+                        "tertiary-container": "#f751a1",
+                        "inverse-surface": "#dce2f7",
+                        "background": "#0c1322",
+                        "surface-container-highest": "#2e3545",
+                        "secondary": "#adc6ff"
+                    },
+                    fontFamily: {
+                        "headline": ["Inter"],
+                        "body": ["Inter"],
+                        "label": ["Inter"]
+                    },
+                    borderRadius: {"DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background selection:bg-primary/30 selection:text-primary">
+<!-- Header / TopNavBar -->
+<header class="fixed top-0 w-full z-50 bg-[#0c1322]/80 backdrop-blur-xl font-['Inter'] antialiased tracking-tight shadow-[0_8px_32px_0_rgba(0,0,0,0.3)]">
+<nav class="flex justify-between items-center px-6 h-16 w-full max-w-7xl mx-auto">
+<div class="flex items-center gap-8">
+<a class="text-xl font-bold tracking-tighter text-white bg-clip-text bg-gradient-to-br from-[#d0bcff] to-[#a078ff]" href="#">UrlShort</a>
+<div class="hidden md:flex gap-6">
+<a class="text-[#cbc3d7] hover:text-white transition-colors duration-200 text-sm font-medium" href="#">Docs</a>
+<a class="text-[#cbc3d7] hover:text-white transition-colors duration-200 text-sm font-medium" href="#">API</a>
+<a class="text-[#cbc3d7] hover:text-white transition-colors duration-200 text-sm font-medium" href="#">Pricing</a>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<button class="text-[#cbc3d7] hover:text-white transition-colors duration-200 text-sm font-medium px-4 py-2">Sign In</button>
+<button class="bg-gradient-to-br from-primary to-primary-container text-on-primary-container px-5 py-2 rounded-lg font-semibold text-sm hover:shadow-[0_0_15px_rgba(208,188,255,0.4)] transition-all active:scale-95">Get Started</button>
+</div>
+</nav>
+</header>
+<main class="pt-32 pb-20">
+<!-- Hero Section -->
+<section class="max-w-7xl mx-auto px-6 text-center mb-32">
+<div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-surface-container-low border border-outline-variant/10 mb-8">
+<span class="material-symbols-outlined text-primary text-sm" style="font-variation-settings: 'FILL' 1;">verified</span>
+<span class="text-xs font-medium tracking-widest uppercase text-on-surface-variant">Enterprise-grade Infrastructure</span>
+</div>
+<h1 class="text-5xl md:text-7xl font-extrabold tracking-tighter text-on-surface mb-6 max-w-4xl mx-auto leading-[1.1]">
+                Shorten, Share, <span class="text-gradient">Track with Confidence</span>
+</h1>
+<p class="text-lg md:text-xl text-on-surface-variant max-w-2xl mx-auto mb-10 leading-relaxed">
+                The high-performance URL management platform built for modern development teams. Precision analytics meets millisecond redirection.
+            </p>
+<div class="flex flex-col sm:flex-row items-center justify-center gap-4">
+<button class="w-full sm:w-auto px-8 py-4 bg-gradient-to-br from-primary to-primary-container text-on-primary-container rounded-xl font-bold text-lg hover:shadow-[0_0_30px_rgba(208,188,255,0.3)] transition-all active:scale-95">
+                    Create Free Account
+                </button>
+<button class="w-full sm:w-auto px-8 py-4 bg-surface-container border border-outline-variant/20 text-on-surface rounded-xl font-bold text-lg hover:bg-surface-container-high transition-all">
+                    I already have an account
+                </button>
+</div>
+<!-- Hero Image / Visual Mockup -->
+<div class="mt-20 relative">
+<div class="absolute inset-0 bg-primary/10 blur-[120px] rounded-full max-w-3xl mx-auto"></div>
+<div class="relative glass-panel rounded-2xl border border-outline-variant/10 p-4 shadow-2xl overflow-hidden">
+<img class="w-full h-auto rounded-lg opacity-80" data-alt="Abstract dark dashboard showing analytical line charts and violet glowing data points" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD2mu2OLEfUQ4Bg9hc2IPN4DIwzpN0oYeGdjt9U8Rox0JNMlMyyWaAfclU1wyYv2MY21fjap5vGDY9XMFqrWLv_5HjmSoyPhk0hVXpxKCq0RTmxtyrn7ARavdU0uIjng4zUYstZVYjbMNZz4DFpxjmfNymFbnIOmsPEQQVoR2w7oO7SqxrjhaXxAel3jCA1husgS6xJ3IwsByPr-N_QJJLX6zj6EfTkNrB2KRpXWYF2LH-NUVhSdgBOmSS1ez3IfhgnN1I4P9tHdA"/>
+</div>
+</div>
+</section>
+<!-- Feature Bento Grid -->
+<section class="max-w-7xl mx-auto px-6 mb-32">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+<!-- Card 1 -->
+<div class="group p-8 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-0 right-0 w-32 h-32 bg-primary/5 blur-3xl rounded-full"></div>
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-3">Fast Shortening</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Global edge network ensures your links resolve in under 20ms, regardless of where your users are located.
+                    </p>
+</div>
+<!-- Card 2 -->
+<div class="group p-8 rounded-2xl bg-surface-container hover:bg-surface-container-high transition-all duration-300 relative overflow-hidden border border-primary/5">
+<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary-container/10 blur-3xl rounded-full"></div>
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">analytics</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-3">Real-time Analytics</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Deep insights into user behavior with device, OS, and geographic tracking without compromising privacy.
+                    </p>
+</div>
+<!-- Card 3 -->
+<div class="group p-8 rounded-2xl bg-surface-container-low hover:bg-surface-container transition-all duration-300 relative overflow-hidden">
+<div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-48 h-48 bg-tertiary/5 blur-[80px] rounded-full"></div>
+<div class="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-primary text-3xl">shield_lock</span>
+</div>
+<h3 class="text-xl font-bold text-on-surface mb-3">Secure &amp; Scalable</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Built on SOC2 compliant infrastructure with automatic DDoS protection and high-availability clusters.
+                    </p>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="max-w-5xl mx-auto px-6">
+<div class="relative rounded-3xl overflow-hidden p-12 text-center bg-gradient-to-br from-surface-container-low to-surface-container">
+<div class="absolute inset-0 bg-[url('https://www.transparenttextures.com/patterns/carbon-fibre.png')] opacity-10"></div>
+<h2 class="text-3xl md:text-4xl font-bold text-on-surface mb-6 relative z-10">Ready to optimize your links?</h2>
+<p class="text-on-surface-variant mb-10 max-w-xl mx-auto relative z-10">Join 10,000+ developers who trust UrlShort for their production-critical redirection services.</p>
+<button class="relative z-10 px-10 py-4 bg-white text-surface-container-lowest rounded-xl font-extrabold text-lg hover:shadow-xl transition-all active:scale-95">
+                    Start Building For Free
+                </button>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-surface-container-lowest border-t border-outline-variant/10 py-16">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+<div class="col-span-1 md:col-span-2">
+<a class="text-2xl font-bold tracking-tighter text-white bg-clip-text bg-gradient-to-br from-[#d0bcff] to-[#a078ff] mb-6 block" href="#">UrlShort</a>
+<p class="text-on-surface-variant max-w-sm">The world's most advanced URL shortening service, built for scale, speed, and absolute reliability.</p>
+</div>
+<div>
+<h4 class="text-on-surface font-bold mb-6">Product</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Sign In</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Register</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Dashboard</a></li>
+</ul>
+</div>
+<div>
+<h4 class="text-on-surface font-bold mb-6">Legal</h4>
+<ul class="space-y-4">
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Terms of Service</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
+<li><a class="text-on-surface-variant hover:text-primary transition-colors" href="#">Compliance</a></li>
+</ul>
+</div>
+</div>
+<div class="pt-8 border-t border-outline-variant/5 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="text-sm text-outline">© 2024 UrlShort Redirection Services. All rights reserved.</p>
+<div class="flex gap-6">
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">terminal</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">cloud</span>
+<span class="material-symbols-outlined text-outline cursor-pointer hover:text-primary transition-colors">code</span>
+</div>
+</div>
+</div>
+</footer>
+</body></html>

@@ -1,0 +1,23 @@
+export const ANALYTICS_PAGE_TEXT = {
+    title: "Phân tích",
+    subtitle: "Theo dõi hiệu quả lượt nhấp và mở báo cáo chi tiết cho từng liên kết.",
+    totalClicksLabel: "Tổng lượt nhấp trên danh sách URL",
+    urlsInPageSuffix: "URL trong trang hiện tại",
+    sectionTitle: "URL của bạn",
+    sectionDescription: "Mở báo cáo chi tiết cho từng liên kết bên dưới.",
+    loading: "Đang tải URL phân tích...",
+    error: "Không thể tải danh sách URL phân tích.",
+    empty: "Không tìm thấy URL. Hãy tạo liên kết rút gọn mới để xem phân tích.",
+    headers: {
+        shortLink: "Liên kết rút gọn",
+        createdAt: "Ngày tạo",
+        clicks: "Lượt nhấp",
+        action: "Thao tác",
+    },
+    clicksSuffix: "lượt nhấp",
+    viewReport: "Xem báo cáo",
+    paginationLabel: "Trang",
+    paginationOf: "trên",
+    previous: "Trước",
+    next: "Sau",
+} as const;

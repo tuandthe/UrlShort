@@ -1,0 +1,2242 @@
+<!-- Design System -->
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SilkShort - Premium URL Shortener</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error": "#ffffff",
+              "tertiary-container": "#a78bfa",
+              "surface-container-high": "#dcdee4",
+              "secondary-fixed": "#d8dae6",
+              "secondary-container": "#d8dae6",
+              "error-container": "#fee2e2",
+              "inverse-surface": "#2e3040",
+              "on-secondary": "#ffffff",
+              "background": "#e8eaf0",
+              "surface-container-low": "#e5e7ed",
+              "error": "#dc2626",
+              "outline-variant": "#d0d2dc",
+              "primary-container": "#818cf8",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#c4b5fd",
+              "surface-container-lowest": "#f0f2f8",
+              "on-tertiary-fixed": "#2e1065",
+              "on-secondary-container": "#585a68",
+              "secondary-fixed-dim": "#b8baca",
+              "secondary": "#6c6e7e",
+              "on-primary-fixed": "#1e1b4b",
+              "inverse-primary": "#a5b4fc",
+              "surface-tint": "#6366f1",
+              "on-primary-fixed-variant": "#4338ca",
+              "tertiary": "#7c3aed",
+              "outline": "#8a8c9a",
+              "primary-fixed": "#e0e2ff",
+              "surface-dim": "#d4d6dc",
+              "on-background": "#2e3040",
+              "on-surface-variant": "#585a68",
+              "on-secondary-fixed-variant": "#404252",
+              "on-surface": "#2e3040",
+              "surface": "#e8eaf0",
+              "on-tertiary-container": "#3b1f63",
+              "surface-bright": "#edeef4",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#991b1b",
+              "tertiary-fixed": "#ede9fe",
+              "surface-variant": "#dcdee4",
+              "primary": "#6366f1",
+              "on-tertiary-fixed-variant": "#5b21b6",
+              "surface-container-highest": "#d6d8de",
+              "on-primary-container": "#e0e2ff",
+              "surface-container": "#e2e4ea",
+              "primary-fixed-dim": "#a5b4fc",
+              "on-secondary-fixed": "#1a1b26",
+              "inverse-on-surface": "#e8eaf0"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            boxShadow: {
+              'neomorphic': '6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.6)',
+              'inset-neomorphic': 'inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #e8eaf0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #2e3040;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .neo-raised {
+            box-shadow: 6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.6);
+        }
+        .neo-pressed {
+            box-shadow: inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5);
+        }
+    </style>
+</head>
+<body class="min-h-screen">
+<!-- TopNavBar -->
+<header class="bg-[#e8eaf0] fixed top-0 left-0 w-full z-50 flex justify-between items-center px-6 py-4 shadow-neomorphic">
+<div class="flex items-center gap-2">
+<span class="text-2xl font-semibold text-indigo-600">SilkShort</span>
+</div>
+<nav class="hidden md:flex items-center space-x-8">
+<a class="text-slate-600 font-medium hover:text-indigo-600 transition-colors" href="#">Login</a>
+<a class="px-6 py-2 bg-[#e8eaf0] neo-raised rounded-xl text-indigo-600 font-semibold active:scale-95 transition-all" href="#">Sign Up</a>
+</nav>
+<button class="md:hidden neo-raised p-2 rounded-lg">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</header>
+<main class="pt-24 pb-12 px-6 max-w-7xl mx-auto">
+<!-- Hero Section -->
+<section class="flex flex-col items-center text-center py-16 md:py-24">
+<div class="neo-pressed px-4 py-1.5 rounded-full mb-8 inline-flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-indigo-500"></span>
+<span class="text-xs font-semibold tracking-wide text-indigo-700 uppercase">Enterprise-grade</span>
+</div>
+<h1 class="text-4xl md:text-7xl font-extrabold text-on-surface tracking-tight mb-6 max-w-4xl leading-tight">
+                Shorten, Share, Track with <span class="text-primary">Confidence</span>
+</h1>
+<p class="text-on-surface-variant text-lg md:text-xl max-w-2xl mb-12">
+                The premium URL management platform designed for modern teams. Secure, lightning-fast, and packed with powerful analytics.
+            </p>
+<div class="flex flex-col sm:flex-row gap-6 w-full sm:w-auto">
+<button class="px-8 py-4 bg-[#e8eaf0] neo-raised rounded-2xl text-primary font-bold text-lg hover:shadow-inset-neomorphic active:scale-95 transition-all">
+                    Create Free Account
+                </button>
+<button class="px-8 py-4 bg-[#e8eaf0] neo-pressed rounded-2xl text-on-surface-variant font-medium text-lg active:scale-95 transition-all">
+                    I already have an account
+                </button>
+</div>
+<!-- Visual Anchor -->
+<div class="mt-20 w-full max-w-5xl neo-raised rounded-[2.5rem] p-4 bg-[#e8eaf0]">
+<div class="neo-pressed rounded-[2rem] overflow-hidden aspect-video relative group">
+<img class="w-full h-full object-cover opacity-80 mix-blend-luminosity hover:mix-blend-normal transition-all duration-700" data-alt="Modern analytics dashboard with clean charts and graphs" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBjx2cojLdiVzeMI4sxmpHtBAg8yHbv26o68diN78cqTlanM9Mqo-ARcvyw-vBuOTbds7D5SnFMkjWVG6qzxVX1PoHCFLCfGR3Mv4liAXTLTcOW1SlGN1_4e-6BmRXScmq_AhRuiU_Ctwn1C3vUh8FXNQdUoDmp1V3fYJz0R3aCJbfrjX5jOYfuH1iVN6OwYlveuoJwqgHq5v_YMlmPtHj2zAW_ntfmuU3QU47Jt7KQ8tCihaHwtfIqJQ4_rswGMlL0v8mcA8D7Xw"/>
+<div class="absolute inset-0 bg-gradient-to-t from-[#e8eaf0]/80 to-transparent"></div>
+</div>
+</div></section>
+<!-- Features Bento Grid -->
+<section class="py-20">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Feature 1: Fast Shortening -->
+<div class="neo-raised p-8 rounded-[2rem] flex flex-col items-start text-left bg-[#e8eaf0]">
+<div class="neo-pressed p-4 rounded-2xl mb-6">
+<span class="material-symbols-outlined text-primary text-3xl">bolt</span>
+</div>
+<h3 class="text-2xl font-semibold text-on-surface mb-4">Fast Shortening</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Generate branded short links in milliseconds. Optimized for speed and high-traffic reliability across the globe.
+                    </p>
+</div>
+<!-- Feature 2: Analytics -->
+<div class="neo-raised p-8 rounded-[2rem] flex flex-col items-start text-left bg-[#e8eaf0]">
+<div class="neo-pressed p-4 rounded-2xl mb-6">
+<span class="material-symbols-outlined text-tertiary text-3xl">analytics</span>
+</div>
+<h3 class="text-2xl font-semibold text-on-surface mb-4">Analytics</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Real-time data at your fingertips. Track clicks, geographic locations, and referral sources with deep precision.
+                    </p>
+</div>
+<!-- Feature 3: Secure -->
+<div class="neo-raised p-8 rounded-[2rem] flex flex-col items-start text-left bg-[#e8eaf0]">
+<div class="neo-pressed p-4 rounded-2xl mb-6">
+<span class="material-symbols-outlined text-error text-3xl">security</span>
+</div>
+<h3 class="text-2xl font-semibold text-on-surface mb-4">Secure</h3>
+<p class="text-on-surface-variant leading-relaxed">
+                        Enterprise-level protection. HTTPS by default, click fraud detection, and multi-factor authentication for your team.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Stats Counter Section -->
+<section class="py-16">
+<div class="neo-pressed rounded-[3rem] p-12 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+<div>
+<div class="text-3xl font-extrabold text-primary mb-1">10M+</div>
+<div class="text-xs uppercase tracking-widest text-on-surface-variant font-semibold">Links Created</div>
+</div>
+<div>
+<div class="text-3xl font-extrabold text-primary mb-1">500k+</div>
+<div class="text-xs uppercase tracking-widest text-on-surface-variant font-semibold">Happy Users</div>
+</div>
+<div>
+<div class="text-3xl font-extrabold text-primary mb-1">99.9%</div>
+<div class="text-xs uppercase tracking-widest text-on-surface-variant font-semibold">Uptime</div>
+</div>
+<div>
+<div class="text-3xl font-extrabold text-primary mb-1">24/7</div>
+<div class="text-xs uppercase tracking-widest text-on-surface-variant font-semibold">Support</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#e8eaf0] pt-20 pb-12 border-t border-white/20">
+<div class="max-w-7xl mx-auto px-6">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12 mb-16">
+<div class="space-y-4">
+<span class="text-2xl font-semibold text-indigo-600">SilkShort</span>
+<p class="text-on-surface-variant pr-8">
+                        The ultimate URL management platform for professionals who demand excellence in every click.
+                    </p>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6 uppercase text-xs tracking-widest">Platform</h4>
+<ul class="space-y-4 text-on-surface-variant font-medium">
+<li><a class="hover:text-primary transition-colors" href="#">Sign In</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Register</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Dashboard</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6 uppercase text-xs tracking-widest">Resources</h4>
+<ul class="space-y-4 text-on-surface-variant font-medium">
+<li><a class="hover:text-primary transition-colors" href="#">API Docs</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Guides</a></li>
+<li><a class="hover:text-primary transition-colors" href="#">Pricing</a></li>
+</ul>
+</div>
+<div>
+<h4 class="font-bold text-on-surface mb-6 uppercase text-xs tracking-widest">Connect</h4>
+<div class="flex gap-4">
+<a class="neo-raised p-3 rounded-xl active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">public</span>
+</a>
+<a class="neo-raised p-3 rounded-xl active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">alternate_email</span>
+</a>
+<a class="neo-raised p-3 rounded-xl active:scale-95 transition-all" href="#">
+<span class="material-symbols-outlined">share</span>
+</a>
+</div>
+</div>
+</div>
+<div class="pt-8 flex flex-col md:flex-row justify-between items-center gap-4 text-on-surface-variant text-sm border-t border-slate-300/30">
+<p>© 2024 SilkShort Inc. All rights reserved.</p>
+<div class="flex gap-8">
+<a class="hover:underline" href="#">Privacy Policy</a>
+<a class="hover:underline" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+</footer>
+<!-- Mobile Navigation Shell (as BottomNavBar for mobile experience) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-[#e8eaf0] px-4 h-20 shadow-[0_-8px_16px_rgba(0,0,0,0.05)] rounded-t-3xl border-t border-white/20">
+<a class="flex flex-col items-center justify-center text-indigo-600 neo-pressed rounded-xl px-4 py-2" href="#">
+<span class="material-symbols-outlined">home</span>
+<span class="text-[10px] font-medium mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500" href="#">
+<span class="material-symbols-outlined">link</span>
+<span class="text-[10px] font-medium mt-1">Links</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500" href="#">
+<span class="material-symbols-outlined">bar_chart</span>
+<span class="text-[10px] font-medium mt-1">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[10px] font-medium mt-1">Profile</span>
+</a>
+</div>
+</body></html>
+
+<!-- Landing Page -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>My URLs - SilkShort</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #e8eaf0;
+        }
+        .shadow-neomorphic {
+            box-shadow: 6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.6);
+        }
+        .shadow-inset-neomorphic {
+            box-shadow: inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .active-tab-shadow {
+            box-shadow: inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5);
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#a78bfa",
+                        "surface-container-high": "#dcdee4",
+                        "secondary-fixed": "#d8dae6",
+                        "secondary-container": "#d8dae6",
+                        "error-container": "#fee2e2",
+                        "inverse-surface": "#2e3040",
+                        "on-secondary": "#ffffff",
+                        "background": "#e8eaf0",
+                        "surface-container-low": "#e5e7ed",
+                        "error": "#dc2626",
+                        "outline-variant": "#d0d2dc",
+                        "primary-container": "#818cf8",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#c4b5fd",
+                        "surface-container-lowest": "#f0f2f8",
+                        "on-tertiary-fixed": "#2e1065",
+                        "on-secondary-container": "#585a68",
+                        "secondary-fixed-dim": "#b8baca",
+                        "secondary": "#6c6e7e",
+                        "on-primary-fixed": "#1e1b4b",
+                        "inverse-primary": "#a5b4fc",
+                        "surface-tint": "#6366f1",
+                        "on-primary-fixed-variant": "#4338ca",
+                        "tertiary": "#7c3aed",
+                        "outline": "#8a8c9a",
+                        "primary-fixed": "#e0e2ff",
+                        "surface-dim": "#d4d6dc",
+                        "on-background": "#2e3040",
+                        "on-surface-variant": "#585a68",
+                        "on-secondary-fixed-variant": "#404252",
+                        "on-surface": "#2e3040",
+                        "surface": "#e8eaf0",
+                        "on-tertiary-container": "#3b1f63",
+                        "surface-bright": "#edeef4",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#991b1b",
+                        "tertiary-fixed": "#ede9fe",
+                        "surface-variant": "#dcdee4",
+                        "primary": "#6366f1",
+                        "on-tertiary-fixed-variant": "#5b21b6",
+                        "surface-container-highest": "#d6d8de",
+                        "on-primary-container": "#e0e2ff",
+                        "surface-container": "#e2e4ea",
+                        "primary-fixed-dim": "#a5b4fc",
+                        "on-secondary-fixed": "#1a1b26",
+                        "inverse-on-surface": "#e8eaf0"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+</head>
+<body class="bg-surface text-on-surface antialiased min-h-screen">
+<!-- Sidebar Navigation -->
+<aside class="hidden md:flex h-screen w-64 fixed left-0 top-0 bg-[#e8eaf0] border-r border-slate-200/50 flex flex-col p-4 space-y-2 z-40 shadow-[6px_0_12px_rgba(0,0,0,0.05)]">
+<div class="text-xl font-semibold text-primary mb-8 px-4 flex items-center gap-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">link</span>
+            SilkShort
+        </div>
+<nav class="flex-1 space-y-2">
+<!-- Active state mapping for 'My URLs' tab -->
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-primary hover:bg-slate-100/50 rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 bg-[#e8eaf0] shadow-[inset_4px_4px_8px_rgba(0,0,0,0.06),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] text-primary rounded-xl font-semibold" href="#">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+<span>My URLs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-primary hover:bg-slate-100/50 rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-primary hover:bg-slate-100/50 rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span>Admin Panel</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-primary hover:bg-slate-100/50 rounded-xl transition-all duration-200" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-200/30">
+<button class="w-full flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-primary hover:bg-slate-100/50 rounded-xl transition-all duration-200">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+<span>Theme Toggle</span>
+</button>
+</div>
+</aside>
+<!-- Mobile Navigation -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-[#e8eaf0] px-4 h-16 border-t border-white/20 shadow-[0_-8px_16px_rgba(0,0,0,0.05)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center text-slate-500 pt-2 pb-safe" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-primary shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] rounded-lg px-3 py-1 pt-2 pb-safe" href="#">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+<span class="text-[10px] font-medium">Links</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 pt-2 pb-safe" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="text-[10px] font-medium">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 pt-2 pb-safe" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 p-6 lg:p-10 pb-24 md:pb-10">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-10">
+<div>
+<h1 class="text-3xl font-extrabold text-on-surface tracking-tight">My URLs</h1>
+<p class="text-on-surface-variant font-medium mt-1">Manage and monitor your shortened links.</p>
+</div>
+<button class="group flex items-center gap-2 px-6 py-3 bg-surface shadow-neomorphic rounded-xl text-primary font-semibold transition-all duration-200 active:shadow-inset-neomorphic active:scale-95">
+<span class="material-symbols-outlined text-lg" data-icon="add">add</span>
+                Create New
+            </button>
+</header>
+<!-- Search & Filter Area (Neomorphic Inset) -->
+<div class="mb-8 flex flex-col lg:flex-row gap-4">
+<div class="flex-1 relative group">
+<input class="w-full bg-surface shadow-inset-neomorphic border-none rounded-xl py-4 pl-12 pr-4 text-on-surface placeholder:text-slate-400 focus:ring-0 focus:outline-none" placeholder="Search links..." type="text"/>
+<span class="material-symbols-outlined absolute left-4 top-1/2 -translate-y-1/2 text-slate-400" data-icon="search">search</span>
+</div>
+<div class="flex gap-4">
+<button class="px-5 py-4 bg-surface shadow-neomorphic rounded-xl text-on-surface-variant flex items-center gap-2 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="filter_list">filter_list</span>
+                    Filter
+                </button>
+<button class="px-5 py-4 bg-surface shadow-neomorphic rounded-xl text-on-surface-variant flex items-center gap-2 hover:text-primary transition-colors">
+<span class="material-symbols-outlined" data-icon="sort">sort</span>
+                    Sort
+                </button>
+</div>
+</div>
+<!-- Table Container (Raised Card) -->
+<div class="bg-surface shadow-neomorphic rounded-2xl overflow-hidden mb-8">
+<div class="overflow-x-auto">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="text-on-surface-variant border-b border-slate-200/50">
+<th class="px-6 py-5 font-semibold text-sm">Short Link</th>
+<th class="px-6 py-5 font-semibold text-sm">Original URL</th>
+<th class="px-6 py-5 font-semibold text-sm">Status</th>
+<th class="px-6 py-5 font-semibold text-sm text-center">Clicks</th>
+<th class="px-6 py-5 font-semibold text-sm">Created</th>
+<th class="px-6 py-5 font-semibold text-sm text-right">Actions</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-100/50">
+<!-- Row 1 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<span class="text-primary font-semibold">silk.sh/v8r2</span>
+<button class="p-1 hover:bg-slate-200/50 rounded-lg text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</td>
+<td class="px-6 py-5 max-w-[200px] truncate text-on-surface-variant">
+                                https://github.com/design-system/documentation/v1/release-notes
+                            </td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                                    Active
+                                </span>
+</td>
+<td class="px-6 py-5 text-center font-medium">1,204</td>
+<td class="px-6 py-5 text-on-surface-variant text-sm">Oct 24, 2023</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-1">
+<button class="p-2 hover:bg-slate-200/50 rounded-xl text-slate-500 hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</button>
+<button class="p-2 hover:bg-slate-200/50 rounded-xl text-slate-500 hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-slate-200/50 rounded-xl text-slate-500 hover:text-error transition-all">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 2 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<span class="text-primary font-semibold">silk.sh/k9p1</span>
+<button class="p-1 hover:bg-slate-200/50 rounded-lg text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</td>
+<td class="px-6 py-5 max-w-[200px] truncate text-on-surface-variant">
+                                https://app.figma.com/files/1029384756/team/projects/soft-ui-kit
+                            </td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-slate-200 text-slate-600 rounded-full text-xs font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-slate-400"></span>
+                                    Expired
+                                </span>
+</td>
+<td class="px-6 py-5 text-center font-medium">856</td>
+<td class="px-6 py-5 text-on-surface-variant text-sm">Sep 12, 2023</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-1">
+<button class="p-2 hover:bg-slate-200/50 rounded-xl text-slate-500 hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</button>
+<button class="p-2 hover:bg-slate-200/50 rounded-xl text-slate-500 hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-slate-200/50 rounded-xl text-slate-500 hover:text-error transition-all">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+<!-- Row 3 -->
+<tr class="hover:bg-slate-50/50 transition-colors">
+<td class="px-6 py-5">
+<div class="flex items-center gap-2">
+<span class="text-primary font-semibold">silk.sh/w5x3</span>
+<button class="p-1 hover:bg-slate-200/50 rounded-lg text-slate-400 hover:text-primary transition-colors">
+<span class="material-symbols-outlined text-sm" data-icon="content_copy">content_copy</span>
+</button>
+</div>
+</td>
+<td class="px-6 py-5 max-w-[200px] truncate text-on-surface-variant">
+                                https://brand.example.com/assets/logo-pack-winter-2024.zip
+                            </td>
+<td class="px-6 py-5">
+<span class="inline-flex items-center gap-1 px-3 py-1 bg-green-100 text-green-700 rounded-full text-xs font-bold uppercase tracking-wider">
+<span class="w-1.5 h-1.5 rounded-full bg-green-500"></span>
+                                    Active
+                                </span>
+</td>
+<td class="px-6 py-5 text-center font-medium">3,492</td>
+<td class="px-6 py-5 text-on-surface-variant text-sm">Nov 02, 2023</td>
+<td class="px-6 py-5 text-right">
+<div class="flex justify-end gap-1">
+<button class="p-2 hover:bg-slate-200/50 rounded-xl text-slate-500 hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+</button>
+<button class="p-2 hover:bg-slate-200/50 rounded-xl text-slate-500 hover:text-primary transition-all">
+<span class="material-symbols-outlined" data-icon="edit">edit</span>
+</button>
+<button class="p-2 hover:bg-slate-200/50 rounded-xl text-slate-500 hover:text-error transition-all">
+<span class="material-symbols-outlined" data-icon="delete">delete</span>
+</button>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<!-- Pagination Section -->
+<footer class="flex flex-col sm:flex-row justify-between items-center gap-6">
+<span class="text-on-surface-variant text-sm font-medium">Showing 1 to 10 of 42 URLs</span>
+<div class="flex items-center gap-3">
+<button class="flex items-center gap-2 px-5 py-2.5 bg-surface shadow-neomorphic rounded-xl text-slate-500 opacity-50 cursor-not-allowed">
+<span class="material-symbols-outlined" data-icon="chevron_left">chevron_left</span>
+                    Previous
+                </button>
+<div class="flex gap-2">
+<button class="w-10 h-10 flex items-center justify-center bg-surface shadow-inset-neomorphic rounded-lg text-primary font-bold">1</button>
+<button class="w-10 h-10 flex items-center justify-center bg-surface shadow-neomorphic rounded-lg text-on-surface hover:text-primary transition-colors">2</button>
+<button class="w-10 h-10 flex items-center justify-center bg-surface shadow-neomorphic rounded-lg text-on-surface hover:text-primary transition-colors">3</button>
+</div>
+<button class="flex items-center gap-2 px-5 py-2.5 bg-surface shadow-neomorphic rounded-xl text-on-surface font-semibold hover:text-primary transition-all duration-200 active:shadow-inset-neomorphic">
+                    Next
+                    <span class="material-symbols-outlined" data-icon="chevron_right">chevron_right</span>
+</button>
+</div>
+</footer>
+</main>
+<!-- Contextual FAB (Suppressing on management page per rules, but including template logic if needed) -->
+<!-- SUPPRESSED FOR LIST VIEW -->
+</body></html>
+
+<!-- My URLs -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Login | SilkShort</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "on-error": "#ffffff",
+                        "tertiary-container": "#a78bfa",
+                        "surface-container-high": "#dcdee4",
+                        "secondary-fixed": "#d8dae6",
+                        "secondary-container": "#d8dae6",
+                        "error-container": "#fee2e2",
+                        "inverse-surface": "#2e3040",
+                        "on-secondary": "#ffffff",
+                        "background": "#e8eaf0",
+                        "surface-container-low": "#e5e7ed",
+                        "error": "#dc2626",
+                        "outline-variant": "#d0d2dc",
+                        "primary-container": "#818cf8",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed-dim": "#c4b5fd",
+                        "surface-container-lowest": "#f0f2f8",
+                        "on-tertiary-fixed": "#2e1065",
+                        "on-secondary-container": "#585a68",
+                        "secondary-fixed-dim": "#b8baca",
+                        "secondary": "#6c6e7e",
+                        "on-primary-fixed": "#1e1b4b",
+                        "inverse-primary": "#a5b4fc",
+                        "surface-tint": "#6366f1",
+                        "on-primary-fixed-variant": "#4338ca",
+                        "tertiary": "#7c3aed",
+                        "outline": "#8a8c9a",
+                        "primary-fixed": "#e0e2ff",
+                        "surface-dim": "#d4d6dc",
+                        "on-background": "#2e3040",
+                        "on-surface-variant": "#585a68",
+                        "on-secondary-fixed-variant": "#404252",
+                        "on-surface": "#2e3040",
+                        "surface": "#e8eaf0",
+                        "on-tertiary-container": "#3b1f63",
+                        "surface-bright": "#edeef4",
+                        "on-tertiary": "#ffffff",
+                        "on-error-container": "#991b1b",
+                        "tertiary-fixed": "#ede9fe",
+                        "surface-variant": "#dcdee4",
+                        "primary": "#6366f1",
+                        "on-tertiary-fixed-variant": "#5b21b6",
+                        "surface-container-highest": "#d6d8de",
+                        "on-primary-container": "#e0e2ff",
+                        "surface-container": "#e2e4ea",
+                        "primary-fixed-dim": "#a5b4fc",
+                        "on-secondary-fixed": "#1a1b26",
+                        "inverse-on-surface": "#e8eaf0"
+                    },
+                    fontFamily: {
+                        "headline": ["Plus Jakarta Sans"],
+                        "body": ["Plus Jakarta Sans"],
+                        "label": ["Plus Jakarta Sans"]
+                    },
+                    borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+                },
+            },
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-neomorphic {
+            box-shadow: 6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.6);
+        }
+        .shadow-inset-neomorphic {
+            box-shadow: inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5);
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-background min-h-screen flex items-center justify-center p-4 md:p-0">
+<main class="w-full max-w-6xl grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-0 bg-background overflow-hidden">
+<!-- Left Column: Branding & Highlights -->
+<div class="hidden md:flex flex-col justify-center px-12 lg:px-20 space-y-12">
+<header>
+<div class="text-4xl font-bold tracking-tight text-primary">
+                    SilkShort
+                </div>
+<p class="mt-4 text-secondary text-lg leading-relaxed">
+                    Premium URL shortening with advanced analytics and neomorphic elegance.
+                </p>
+</header>
+<div class="space-y-8">
+<!-- Highlight 1 -->
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 flex items-center justify-center rounded-xl bg-background shadow-neomorphic">
+<span class="material-symbols-outlined text-primary" data-icon="analytics">analytics</span>
+</div>
+<div>
+<h3 class="font-semibold text-on-surface text-lg">Real-time Analytics</h3>
+<p class="text-on-surface-variant text-sm">Track every click, location, and device in beautiful soft UI charts.</p>
+</div>
+</div>
+<!-- Highlight 2 -->
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 flex items-center justify-center rounded-xl bg-background shadow-neomorphic">
+<span class="material-symbols-outlined text-primary" data-icon="security">security</span>
+</div>
+<div>
+<h3 class="font-semibold text-on-surface text-lg">Enterprise Security</h3>
+<p class="text-on-surface-variant text-sm">Custom link expiration, password protection, and SSL encryption.</p>
+</div>
+</div>
+<!-- Highlight 3 -->
+<div class="flex items-start gap-4">
+<div class="w-12 h-12 flex items-center justify-center rounded-xl bg-background shadow-neomorphic">
+<span class="material-symbols-outlined text-primary" data-icon="bolt">bolt</span>
+</div>
+<div>
+<h3 class="font-semibold text-on-surface text-lg">Lightning Fast</h3>
+<p class="text-on-surface-variant text-sm">Global CDN edge redirection ensures your links load in milliseconds.</p>
+</div>
+</div>
+</div>
+</div>
+<!-- Right Column: Welcome Back Card -->
+<div class="flex items-center justify-center px-4 md:px-12 lg:px-20">
+<div class="w-full max-w-md bg-background shadow-neomorphic rounded-xl p-8 md:p-10">
+<div class="text-center mb-10 md:hidden">
+<h1 class="text-3xl font-bold text-primary">SilkShort</h1>
+</div>
+<div class="mb-8">
+<h2 class="text-2xl font-semibold text-on-surface">Welcome back</h2>
+<p class="text-on-surface-variant mt-2">Enter your credentials to access your dashboard.</p>
+</div>
+<form class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-secondary mb-2 ml-1">Email</label>
+<div class="bg-background shadow-inset-neomorphic rounded-lg px-4 py-3 flex items-center">
+<span class="material-symbols-outlined text-outline mr-3 text-lg" data-icon="mail">mail</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder:text-outline-variant" placeholder="name@company.com" type="email"/>
+</div>
+</div>
+<div>
+<div class="flex justify-between items-center mb-2 ml-1">
+<label class="block text-sm font-medium text-secondary">Password</label>
+<a class="text-xs text-primary font-medium hover:underline" href="#">Forgot password?</a>
+</div>
+<div class="bg-background shadow-inset-neomorphic rounded-lg px-4 py-3 flex items-center">
+<span class="material-symbols-outlined text-outline mr-3 text-lg" data-icon="lock">lock</span>
+<input class="bg-transparent border-none focus:ring-0 w-full text-on-surface placeholder:text-outline-variant" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="pt-2">
+<button class="w-full py-4 bg-background shadow-neomorphic active:shadow-inset-neomorphic rounded-xl font-semibold text-primary transition-all duration-150 transform active:scale-[0.98]" type="button">
+                            Sign In
+                        </button>
+</div>
+</form>
+<div class="mt-8 flex items-center gap-4">
+<div class="h-[1px] flex-1 bg-outline-variant"></div>
+<span class="text-xs font-medium text-outline uppercase tracking-wider">Or continue with</span>
+<div class="h-[1px] flex-1 bg-outline-variant"></div>
+</div>
+<div class="mt-8">
+<button class="w-full flex items-center justify-center gap-3 py-3 bg-background shadow-neomorphic active:shadow-inset-neomorphic rounded-xl font-medium text-on-surface transition-all duration-150">
+<img alt="" class="w-5 h-5" data-alt="Google logo colorful icon" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAy5IqsTgsKKG4oUfWKdhEOUEGiw5jQd1KNT2_HaFK5-XdtZKglu5SJRcOh46fT7L8GYglIwWrP-luvU0N5CPw16LvQcXLITqjiykF9c9L_rocmdspRjEGd0u0q7bGk89GMnUkRRUzqDMYiFLvOktSVleiO9WKhScfDLs2T5LvbHLzd-pDQfBshGuMyPAmRqYl4vASSCMn0XOKVADA4R_k9zboULpZmcHh3XqpT-X7FAXohQSz6KAz8wgNSOwz1wFI68vLENYjVPw"/>
+                        Google
+                    </button>
+</div>
+<div class="mt-10 text-center">
+<p class="text-sm text-on-surface-variant">
+                        Don't have an account? 
+                        <a class="text-primary font-semibold hover:underline ml-1" href="#">Register</a>
+</p>
+</div>
+</div>
+</div>
+</main>
+<!-- Contextual Navigation (Suppressed based on Transactional Policy) -->
+<!-- The BottomNavBar and TopNavBar are suppressed as this is a focused auth journey -->
+</body></html>
+
+<!-- Login -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error": "#ffffff",
+              "tertiary-container": "#a78bfa",
+              "surface-container-high": "#dcdee4",
+              "secondary-fixed": "#d8dae6",
+              "secondary-container": "#d8dae6",
+              "error-container": "#fee2e2",
+              "inverse-surface": "#2e3040",
+              "on-secondary": "#ffffff",
+              "background": "#e8eaf0",
+              "surface-container-low": "#e5e7ed",
+              "error": "#dc2626",
+              "outline-variant": "#d0d2dc",
+              "primary-container": "#818cf8",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#c4b5fd",
+              "surface-container-lowest": "#f0f2f8",
+              "on-tertiary-fixed": "#2e1065",
+              "on-secondary-container": "#585a68",
+              "secondary-fixed-dim": "#b8baca",
+              "secondary": "#6c6e7e",
+              "on-primary-fixed": "#1e1b4b",
+              "inverse-primary": "#a5b4fc",
+              "surface-tint": "#6366f1",
+              "on-primary-fixed-variant": "#4338ca",
+              "tertiary": "#7c3aed",
+              "outline": "#8a8c9a",
+              "primary-fixed": "#e0e2ff",
+              "surface-dim": "#d4d6dc",
+              "on-background": "#2e3040",
+              "on-surface-variant": "#585a68",
+              "on-secondary-fixed-variant": "#404252",
+              "on-surface": "#2e3040",
+              "surface": "#e8eaf0",
+              "on-tertiary-container": "#3b1f63",
+              "surface-bright": "#edeef4",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#991b1b",
+              "tertiary-fixed": "#ede9fe",
+              "surface-variant": "#dcdee4",
+              "primary": "#6366f1",
+              "on-tertiary-fixed-variant": "#5b21b6",
+              "surface-container-highest": "#d6d8de",
+              "on-primary-container": "#e0e2ff",
+              "surface-container": "#e2e4ea",
+              "primary-fixed-dim": "#a5b4fc",
+              "on-secondary-fixed": "#1a1b26",
+              "inverse-on-surface": "#e8eaf0"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            boxShadow: {
+              'neomorphic': '6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.6)',
+              'inset-neomorphic': 'inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #e8eaf0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+</head>
+<body class="text-on-surface min-h-screen">
+<!-- SideNavBar Anchor -->
+<aside class="hidden md:flex flex-col p-4 space-y-2 h-screen w-64 fixed left-0 top-0 bg-[#e8eaf0] dark:bg-slate-900 border-r border-slate-200/50 dark:border-slate-800/50 shadow-[6px_0_12px_rgba(0,0,0,0.05)] z-40">
+<div class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-8 px-2">SilkShort</div>
+<nav class="flex-1 space-y-2">
+<!-- Active State: Overview -->
+<a class="flex items-center space-x-3 p-3 bg-[#e8eaf0] dark:bg-slate-900 shadow-[inset_4px_4px_8px_rgba(0,0,0,0.06),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] text-indigo-600 dark:text-indigo-400 rounded-xl transition-shadow duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">Overview</span>
+</a>
+<a class="flex items-center space-x-3 p-3 text-slate-500 dark:text-slate-400 hover:text-indigo-500 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+<span class="font-medium">My URLs</span>
+</a>
+<a class="flex items-center space-x-3 p-3 text-slate-500 dark:text-slate-400 hover:text-indigo-500 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-medium">Analytics</span>
+</a>
+<a class="flex items-center space-x-3 p-3 text-slate-500 dark:text-slate-400 hover:text-indigo-500 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-medium">Admin Panel</span>
+</a>
+<a class="flex items-center space-x-3 p-3 text-slate-500 dark:text-slate-400 hover:text-indigo-500 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-xl transition-all duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</nav>
+<div class="mt-auto pt-4 border-t border-slate-200/30">
+<button class="flex items-center space-x-3 p-3 w-full text-slate-500 dark:text-slate-400 hover:text-indigo-500 rounded-xl transition-all duration-300">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+<span class="font-medium">Theme Toggle</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 p-6 lg:p-10 pb-24 md:pb-10">
+<!-- Header Section -->
+<header class="mb-10 flex justify-between items-start">
+<div>
+<h1 class="text-3xl font-semibold text-on-surface mb-1">Good Morning, Alex</h1>
+<p class="text-on-surface-variant font-medium">Welcome back to your dashboard overview.</p>
+</div>
+<div class="hidden sm:flex items-center space-x-4">
+<div class="w-12 h-12 rounded-full shadow-neomorphic flex items-center justify-center bg-surface overflow-hidden border-2 border-surface">
+<img alt="User Profile" class="w-full h-full object-cover" data-alt="Close up portrait of a smiling young man" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBRdS6o0ddhFVbEt8K5rTgpJQCS9b4YfFVPHVjh6hMevMvr6jn0XibEJyGtHERHjhBsmouE8eXcIPhF00C1W0VNmUzqdweI8iUXOgohaXrrKq8k1WYj3Jay02tAnQh4f7TyyBpeH7d7AsdsDFf4KQ_LcW7PN6t1hh-0EFcnP2bGy6zT-xcRG80hjPFWxshI-7eVIqlTVdB4FPt73ABzTWX35ob683Rv9IFJ0_wwJ6slX9H8ej7CLyH4BNkeGFoStmZ0LDiVXCthoA"/>
+</div>
+</div>
+</header>
+<!-- Stats Grid -->
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+<div class="p-6 rounded-xl bg-surface shadow-neomorphic flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 rounded-lg shadow-inset-neomorphic text-primary">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+</span>
+<span class="text-xs font-semibold text-green-500">+12%</span>
+</div>
+<span class="text-on-surface-variant text-sm font-medium">Total URLs</span>
+<span class="text-2xl font-semibold text-on-surface mt-1">1,284</span>
+</div>
+<div class="p-6 rounded-xl bg-surface shadow-neomorphic flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 rounded-lg shadow-inset-neomorphic text-tertiary">
+<span class="material-symbols-outlined" data-icon="ads_click">ads_click</span>
+</span>
+<span class="text-xs font-semibold text-green-500">+24%</span>
+</div>
+<span class="text-on-surface-variant text-sm font-medium">Total Clicks</span>
+<span class="text-2xl font-semibold text-on-surface mt-1">45,902</span>
+</div>
+<div class="p-6 rounded-xl bg-surface shadow-neomorphic flex flex-col">
+<div class="flex items-center justify-between mb-4">
+<span class="p-2 rounded-lg shadow-inset-neomorphic text-indigo-400">
+<span class="material-symbols-outlined" data-icon="bolt">bolt</span>
+</span>
+<span class="text-xs font-semibold text-slate-400">Stable</span>
+</div>
+<span class="text-on-surface-variant text-sm font-medium">Active URLs</span>
+<span class="text-2xl font-semibold text-on-surface mt-1">812</span>
+</div>
+</div>
+<!-- Create & Recent Activity Bento Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-5 gap-8">
+<!-- Quick Create Form -->
+<section class="lg:col-span-2 flex flex-col h-full">
+<div class="p-8 rounded-xl bg-surface shadow-neomorphic flex-1">
+<h2 class="text-xl font-semibold text-on-surface mb-6 flex items-center gap-2">
+<span class="material-symbols-outlined text-primary" data-icon="add_link">add_link</span>
+                        Quick Create
+                    </h2>
+<form class="space-y-6">
+<div>
+<label class="block text-sm font-medium text-on-surface-variant mb-2">Destination URL</label>
+<div class="shadow-inset-neomorphic rounded-xl overflow-hidden px-4 py-1">
+<input class="w-full bg-transparent border-none focus:ring-0 py-3 text-on-surface placeholder:text-slate-400" placeholder="https://very-long-destination.com/path" type="url"/>
+</div>
+</div>
+<div class="pt-2">
+<button class="flex items-center justify-between w-full text-on-surface-variant hover:text-primary transition-colors" type="button">
+<span class="text-sm font-medium">Advanced Options</span>
+<span class="material-symbols-outlined text-sm" data-icon="expand_more">expand_more</span>
+</button>
+<div class="mt-4 space-y-4">
+<div class="grid grid-cols-2 gap-4">
+<div class="shadow-inset-neomorphic rounded-xl px-3 py-1">
+<input class="w-full bg-transparent border-none focus:ring-0 py-2 text-sm text-on-surface" placeholder="Custom Alias" type="text"/>
+</div>
+<div class="shadow-inset-neomorphic rounded-xl px-3 py-1">
+<input class="w-full bg-transparent border-none focus:ring-0 py-2 text-sm text-on-surface" placeholder="Password" type="password"/>
+</div>
+</div>
+</div>
+</div>
+<button class="w-full py-4 mt-4 bg-surface shadow-neomorphic rounded-xl text-primary font-semibold hover:shadow-inset-neomorphic active:scale-95 transition-all duration-200" type="submit">
+                            Shorten URL
+                        </button>
+</form>
+</div>
+</section>
+<!-- Recent URLs Table -->
+<section class="lg:col-span-3 flex flex-col h-full">
+<div class="p-8 rounded-xl bg-surface shadow-neomorphic flex-1 overflow-hidden">
+<div class="flex justify-between items-center mb-6">
+<h2 class="text-xl font-semibold text-on-surface">Recent URLs</h2>
+<button class="text-sm text-primary font-medium hover:underline">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-on-surface-variant border-b border-slate-200/50">
+<th class="pb-4 font-medium">Short Link</th>
+<th class="pb-4 font-medium">Destination</th>
+<th class="pb-4 font-medium text-right">Clicks</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-slate-200/30">
+<tr>
+<td class="py-4">
+<div class="flex items-center space-x-2">
+<span class="text-on-surface font-semibold">silk.sh/pro-dash</span>
+<button class="material-symbols-outlined text-sm text-slate-400 hover:text-primary" data-icon="content_copy">content_copy</button>
+</div>
+</td>
+<td class="py-4">
+<span class="text-on-surface-variant text-sm truncate block max-w-[180px]">github.com/alex/project-awesome-dashboard</span>
+</td>
+<td class="py-4 text-right">
+<span class="px-3 py-1 rounded-full shadow-inset-neomorphic text-xs font-semibold text-primary">1.2k</span>
+</td>
+</tr>
+<tr>
+<td class="py-4">
+<div class="flex items-center space-x-2">
+<span class="text-on-surface font-semibold">silk.sh/summer24</span>
+<button class="material-symbols-outlined text-sm text-slate-400 hover:text-primary" data-icon="content_copy">content_copy</button>
+</div>
+</td>
+<td class="py-4">
+<span class="text-on-surface-variant text-sm truncate block max-w-[180px]">notion.so/workspace/travel-plans-2024</span>
+</td>
+<td class="py-4 text-right">
+<span class="px-3 py-1 rounded-full shadow-inset-neomorphic text-xs font-semibold text-primary">842</span>
+</td>
+</tr>
+<tr>
+<td class="py-4">
+<div class="flex items-center space-x-2">
+<span class="text-on-surface font-semibold">silk.sh/refer-9x</span>
+<button class="material-symbols-outlined text-sm text-slate-400 hover:text-primary" data-icon="content_copy">content_copy</button>
+</div>
+</td>
+<td class="py-4">
+<span class="text-on-surface-variant text-sm truncate block max-w-[180px]">app.stripe.com/p/referral-program-final</span>
+</td>
+<td class="py-4 text-right">
+<span class="px-3 py-1 rounded-full shadow-inset-neomorphic text-xs font-semibold text-primary">45</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</div>
+</main>
+<!-- BottomNavBar Anchor (Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-[#e8eaf0] dark:bg-slate-900 px-4 h-16 rounded-t-3xl shadow-[0_-8px_16px_rgba(0,0,0,0.05)] border-t border-white/20">
+<a class="flex flex-col items-center justify-center pt-2 pb-safe text-indigo-600 dark:text-indigo-400 shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] rounded-lg px-3 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center pt-2 pb-safe text-slate-500 dark:text-slate-400 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Links</span>
+</a>
+<a class="flex flex-col items-center justify-center pt-2 pb-safe text-slate-500 dark:text-slate-400 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center pt-2 pb-safe text-slate-500 dark:text-slate-400 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+<!-- Floating Action Button Anchor (Contextual) -->
+<div class="fixed bottom-20 right-6 md:bottom-8 md:right-8">
+<button class="w-14 h-14 rounded-full bg-surface shadow-neomorphic flex items-center justify-center text-primary hover:shadow-inset-neomorphic active:scale-95 transition-all duration-200">
+<span class="material-symbols-outlined text-3xl" data-icon="add">add</span>
+</button>
+</div>
+</body></html>
+
+<!-- Dashboard Overview -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Performance Report | SilkShort</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<style>
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #e8eaf0;
+            color: #2e3040;
+        }
+        .shadow-neomorphic {
+            box-shadow: 6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.6);
+        }
+        .shadow-inset-neomorphic {
+            box-shadow: inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+    </style>
+<script id="tailwind-config">
+        tailwind.config = {
+          darkMode: "class",
+          theme: {
+            extend: {
+              colors: {
+                "on-error": "#ffffff",
+                "tertiary-container": "#a78bfa",
+                "surface-container-high": "#dcdee4",
+                "secondary-fixed": "#d8dae6",
+                "secondary-container": "#d8dae6",
+                "error-container": "#fee2e2",
+                "inverse-surface": "#2e3040",
+                "on-secondary": "#ffffff",
+                "background": "#e8eaf0",
+                "surface-container-low": "#e5e7ed",
+                "error": "#dc2626",
+                "outline-variant": "#d0d2dc",
+                "primary-container": "#818cf8",
+                "on-primary": "#ffffff",
+                "tertiary-fixed-dim": "#c4b5fd",
+                "surface-container-lowest": "#f0f2f8",
+                "on-tertiary-fixed": "#2e1065",
+                "on-secondary-container": "#585a68",
+                "secondary-fixed-dim": "#b8baca",
+                "secondary": "#6c6e7e",
+                "on-primary-fixed": "#1e1b4b",
+                "inverse-primary": "#a5b4fc",
+                "surface-tint": "#6366f1",
+                "on-primary-fixed-variant": "#4338ca",
+                "tertiary": "#7c3aed",
+                "outline": "#8a8c9a",
+                "primary-fixed": "#e0e2ff",
+                "surface-dim": "#d4d6dc",
+                "on-background": "#2e3040",
+                "on-surface-variant": "#585a68",
+                "on-secondary-fixed-variant": "#404252",
+                "on-surface": "#2e3040",
+                "surface": "#e8eaf0",
+                "on-tertiary-container": "#3b1f63",
+                "surface-bright": "#edeef4",
+                "on-tertiary": "#ffffff",
+                "on-error-container": "#991b1b",
+                "tertiary-fixed": "#ede9fe",
+                "surface-variant": "#dcdee4",
+                "primary": "#6366f1",
+                "on-tertiary-fixed-variant": "#5b21b6",
+                "surface-container-highest": "#d6d8de",
+                "on-primary-container": "#e0e2ff",
+                "surface-container": "#e2e4ea",
+                "primary-fixed-dim": "#a5b4fc",
+                "on-secondary-fixed": "#1a1b26",
+                "inverse-on-surface": "#e8eaf0"
+              },
+              fontFamily: {
+                "headline": ["Plus Jakarta Sans"],
+                "body": ["Plus Jakarta Sans"],
+                "label": ["Plus Jakarta Sans"]
+              },
+              borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            },
+          },
+        }
+    </script>
+</head>
+<body class="bg-surface">
+<!-- SideNavBar (Authority: JSON) -->
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#e8eaf0] dark:bg-slate-900 border-r border-slate-200/50 dark:border-slate-800/50 shadow-[6px_0_12px_rgba(0,0,0,0.05)] flex flex-col p-4 space-y-2 z-40 hidden md:flex">
+<div class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-8 px-2">SilkShort</div>
+<nav class="flex-grow space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-indigo-500 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-xl transition-shadow duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span>Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-indigo-500 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-xl transition-shadow duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+<span>My URLs</span>
+</a>
+<!-- Active State Logic: Analytics Detail page maps to Analytics tab -->
+<a class="flex items-center gap-3 px-4 py-3 bg-[#e8eaf0] dark:bg-slate-900 shadow-[inset_4px_4px_8px_rgba(0,0,0,0.06),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] text-indigo-600 dark:text-indigo-400 rounded-xl transition-shadow duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span>Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-indigo-500 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-xl transition-shadow duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span>Admin Panel</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-indigo-500 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-xl transition-shadow duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span>Settings</span>
+</a>
+</nav>
+<div class="pt-4 mt-4 border-t border-slate-200/50">
+<button class="flex items-center gap-3 px-4 py-3 w-full text-slate-500 dark:text-slate-400 hover:text-indigo-500 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-xl transition-shadow duration-300">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+<span>Theme Toggle</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Canvas -->
+<main class="md:ml-64 min-h-screen pb-24 md:pb-8 p-6 lg:p-10 space-y-8">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row md:items-center justify-between gap-4">
+<div class="flex items-center gap-4">
+<button class="w-10 h-10 flex items-center justify-center rounded-xl bg-surface shadow-neomorphic text-on-surface active:shadow-inset-neomorphic transition-all duration-150">
+<span class="material-symbols-outlined" data-icon="arrow_back">arrow_back</span>
+</button>
+<div>
+<h1 class="text-2xl font-semibold text-on-surface tracking-tight">Performance Report</h1>
+<p class="text-on-surface-variant text-sm font-medium">Link ID: <span class="text-primary">slk.sh/xJ92k1v</span></p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="px-5 py-2.5 rounded-xl bg-surface shadow-neomorphic text-on-surface-variant font-medium active:shadow-inset-neomorphic flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="calendar_today">calendar_today</span>
+                    Last 30 Days
+                </button>
+<button class="px-5 py-2.5 rounded-xl bg-surface shadow-neomorphic text-primary font-semibold active:shadow-inset-neomorphic flex items-center gap-2">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+                    Export
+                </button>
+</div>
+</header>
+<!-- Stats Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Total Clicks -->
+<div class="bg-surface p-6 rounded-2xl shadow-neomorphic flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-surface shadow-inset-neomorphic flex items-center justify-center">
+<span class="material-symbols-outlined text-primary" data-icon="ads_click">ads_click</span>
+</div>
+<span class="text-xs font-semibold px-2 py-1 rounded-full bg-green-100 text-green-600">+12.4%</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">Total Clicks</p>
+<p class="text-3xl font-semibold text-on-surface">12,482</p>
+</div>
+</div>
+<!-- Avg Clicks/Day -->
+<div class="bg-surface p-6 rounded-2xl shadow-neomorphic flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-surface shadow-inset-neomorphic flex items-center justify-center">
+<span class="material-symbols-outlined text-tertiary" data-icon="timeline">timeline</span>
+</div>
+<span class="text-xs font-semibold px-2 py-1 rounded-full bg-red-100 text-red-600">-2.1%</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">Avg Clicks/Day</p>
+<p class="text-3xl font-semibold text-on-surface">416.0</p>
+</div>
+</div>
+<!-- Top Referrer -->
+<div class="bg-surface p-6 rounded-2xl shadow-neomorphic flex flex-col gap-4">
+<div class="flex items-center justify-between">
+<div class="w-12 h-12 rounded-xl bg-surface shadow-inset-neomorphic flex items-center justify-center">
+<span class="material-symbols-outlined text-on-surface-variant" data-icon="language">language</span>
+</div>
+<span class="text-xs font-semibold px-2 py-1 rounded-full bg-primary-fixed text-primary">Direct</span>
+</div>
+<div>
+<p class="text-on-surface-variant text-sm font-medium">Top Referrer</p>
+<p class="text-3xl font-semibold text-on-surface">Twitter.com</p>
+</div>
+</div>
+</section>
+<!-- Main Analytics Section (Bento Grid) -->
+<section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+<!-- Line Chart (Clicks over time) -->
+<div class="lg:col-span-2 bg-surface p-8 rounded-2xl shadow-neomorphic space-y-6">
+<div class="flex items-center justify-between">
+<h3 class="text-lg font-semibold text-on-surface">Clicks Over Time</h3>
+<div class="flex gap-2">
+<button class="w-8 h-8 rounded-lg shadow-inset-neomorphic flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-base" data-icon="show_chart">show_chart</span>
+</button>
+<button class="w-8 h-8 rounded-lg shadow-neomorphic flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-base" data-icon="bar_chart">bar_chart</span>
+</button>
+</div>
+</div>
+<!-- Chart Visual Placeholder -->
+<div class="h-64 w-full relative bg-surface shadow-inset-neomorphic rounded-xl overflow-hidden p-4 flex items-end justify-between gap-1">
+<!-- Faux SVG Line Graphic Overlay -->
+<div class="absolute inset-0 flex items-center justify-center opacity-10 pointer-events-none">
+<span class="material-symbols-outlined text-9xl" data-icon="monitoring">monitoring</span>
+</div>
+<div class="w-full h-1/2 bg-gradient-to-t from-primary/10 to-transparent rounded-t-sm border-t-2 border-primary relative">
+<div class="absolute -top-1 right-0 w-3 h-3 bg-primary rounded-full shadow-lg border-2 border-surface"></div>
+</div>
+</div>
+<div class="flex justify-between text-xs font-medium text-outline">
+<span>Oct 01</span>
+<span>Oct 08</span>
+<span>Oct 15</span>
+<span>Oct 22</span>
+<span>Oct 30</span>
+</div>
+</div>
+<!-- Bar Chart (Top traffic sources) -->
+<div class="bg-surface p-8 rounded-2xl shadow-neomorphic space-y-6">
+<h3 class="text-lg font-semibold text-on-surface">Traffic Sources</h3>
+<div class="space-y-6">
+<!-- Source 1 -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-medium">
+<span class="text-on-surface">Twitter</span>
+<span class="text-on-surface-variant">45%</span>
+</div>
+<div class="w-full h-3 bg-surface shadow-inset-neomorphic rounded-full overflow-hidden">
+<div class="h-full bg-primary rounded-full" style="width: 45%;"></div>
+</div>
+</div>
+<!-- Source 2 -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-medium">
+<span class="text-on-surface">LinkedIn</span>
+<span class="text-on-surface-variant">28%</span>
+</div>
+<div class="w-full h-3 bg-surface shadow-inset-neomorphic rounded-full overflow-hidden">
+<div class="h-full bg-tertiary rounded-full" style="width: 28%;"></div>
+</div>
+</div>
+<!-- Source 3 -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-medium">
+<span class="text-on-surface">Direct</span>
+<span class="text-on-surface-variant">15%</span>
+</div>
+<div class="w-full h-3 bg-surface shadow-inset-neomorphic rounded-full overflow-hidden">
+<div class="h-full bg-on-surface-variant rounded-full" style="width: 15%;"></div>
+</div>
+</div>
+<!-- Source 4 -->
+<div class="space-y-2">
+<div class="flex justify-between text-sm font-medium">
+<span class="text-on-surface">Email</span>
+<span class="text-on-surface-variant">12%</span>
+</div>
+<div class="w-full h-3 bg-surface shadow-inset-neomorphic rounded-full overflow-hidden">
+<div class="h-full bg-secondary rounded-full" style="width: 12%;"></div>
+</div>
+</div>
+</div>
+<button class="w-full py-3 rounded-xl bg-surface shadow-neomorphic text-sm font-semibold text-primary active:shadow-inset-neomorphic mt-4">
+                    View Full Details
+                </button>
+</div>
+</section>
+<!-- Geolocation & Device Card -->
+<section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+<div class="bg-surface p-8 rounded-2xl shadow-neomorphic flex flex-col md:flex-row items-center gap-6">
+<div class="w-full h-48 md:w-48 md:h-48 rounded-2xl overflow-hidden shadow-inset-neomorphic relative">
+<img alt="World Map Illustration" class="w-full h-full object-cover grayscale opacity-50" data-alt="Stylized world map showing traffic locations" data-location="Global" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA3w_qsN-ipvFLgHBsjvhGm67BS85tKkLjroWPE6Z1x21MTfnJl483fJ50TIR1V7eMNIPgVLMiJ7N4I3WPunEA16kddlUaZPYAbSKHmJdkVGsUJmamSixSlvJ_XdOdKfAh7gcoI2IV45aLJgSCdpDkKwdOczecIKcUlcibqYP19m2iJ4K8L5Wp5s8jtJwr9hU5tpUUTKYTfzA9N5v-Cuxh7wZ685-Y3vgogKebUsylzTOTD20rDFYpFeVMbissgSGAhY1nPvBKiDA"/>
+<div class="absolute inset-0 bg-primary/10 mix-blend-multiply"></div>
+</div>
+<div class="flex-grow space-y-4 w-full">
+<h3 class="text-lg font-semibold text-on-surface">Top Countries</h3>
+<ul class="space-y-3">
+<li class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-primary"></span>
+<span class="text-sm font-medium">United States</span>
+</div>
+<span class="text-sm text-outline">5,201</span>
+</li>
+<li class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-tertiary"></span>
+<span class="text-sm font-medium">United Kingdom</span>
+</div>
+<span class="text-sm text-outline">2,840</span>
+</li>
+<li class="flex items-center justify-between">
+<div class="flex items-center gap-2">
+<span class="w-2 h-2 rounded-full bg-secondary"></span>
+<span class="text-sm font-medium">Germany</span>
+</div>
+<span class="text-sm text-outline">1,120</span>
+</li>
+</ul>
+</div>
+</div>
+<div class="bg-surface p-8 rounded-2xl shadow-neomorphic flex flex-col justify-center gap-6">
+<h3 class="text-lg font-semibold text-on-surface">Device Breakdown</h3>
+<div class="flex items-center justify-around">
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-2xl shadow-inset-neomorphic flex items-center justify-center text-primary">
+<span class="material-symbols-outlined text-3xl" data-icon="smartphone">smartphone</span>
+</div>
+<span class="text-sm font-semibold">68%</span>
+<span class="text-xs text-outline">Mobile</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-2xl shadow-inset-neomorphic flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-3xl" data-icon="desktop_windows">desktop_windows</span>
+</div>
+<span class="text-sm font-semibold">25%</span>
+<span class="text-xs text-outline">Desktop</span>
+</div>
+<div class="flex flex-col items-center gap-2">
+<div class="w-16 h-16 rounded-2xl shadow-inset-neomorphic flex items-center justify-center text-on-surface-variant">
+<span class="material-symbols-outlined text-3xl" data-icon="tablet_mac">tablet_mac</span>
+</div>
+<span class="text-sm font-semibold">7%</span>
+<span class="text-xs text-outline">Tablet</span>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Authority: JSON - Mobile Only) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-[#e8eaf0] dark:bg-slate-900 px-4 h-16 rounded-t-3xl shadow-[0_-8px_16px_rgba(0,0,0,0.05)] border-t border-white/20">
+<a class="flex flex-col items-center justify-center pt-2 pb-safe text-slate-500 dark:text-slate-400 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center pt-2 pb-safe text-slate-500 dark:text-slate-400 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Links</span>
+</a>
+<!-- Active Mapping -->
+<a class="flex flex-col items-center justify-center pt-2 pb-safe text-indigo-600 dark:text-indigo-400 shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] rounded-lg px-3 py-1 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center pt-2 pb-safe text-slate-500 dark:text-slate-400 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>
+
+<!-- Analytics Detail -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SilkShort - Settings</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error": "#ffffff",
+              "tertiary-container": "#a78bfa",
+              "surface-container-high": "#dcdee4",
+              "secondary-fixed": "#d8dae6",
+              "secondary-container": "#d8dae6",
+              "error-container": "#fee2e2",
+              "inverse-surface": "#2e3040",
+              "on-secondary": "#ffffff",
+              "background": "#e8eaf0",
+              "surface-container-low": "#e5e7ed",
+              "error": "#dc2626",
+              "outline-variant": "#d0d2dc",
+              "primary-container": "#818cf8",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#c4b5fd",
+              "surface-container-lowest": "#f0f2f8",
+              "on-tertiary-fixed": "#2e1065",
+              "on-secondary-container": "#585a68",
+              "secondary-fixed-dim": "#b8baca",
+              "secondary": "#6c6e7e",
+              "on-primary-fixed": "#1e1b4b",
+              "inverse-primary": "#a5b4fc",
+              "surface-tint": "#6366f1",
+              "on-primary-fixed-variant": "#4338ca",
+              "tertiary": "#7c3aed",
+              "outline": "#8a8c9a",
+              "primary-fixed": "#e0e2ff",
+              "surface-dim": "#d4d6dc",
+              "on-background": "#2e3040",
+              "on-surface-variant": "#585a68",
+              "on-secondary-fixed-variant": "#404252",
+              "on-surface": "#2e3040",
+              "surface": "#e8eaf0",
+              "on-tertiary-container": "#3b1f63",
+              "surface-bright": "#edeef4",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#991b1b",
+              "tertiary-fixed": "#ede9fe",
+              "surface-variant": "#dcdee4",
+              "primary": "#6366f1",
+              "on-tertiary-fixed-variant": "#5b21b6",
+              "surface-container-highest": "#d6d8de",
+              "on-primary-container": "#e0e2ff",
+              "surface-container": "#e2e4ea",
+              "primary-fixed-dim": "#a5b4fc",
+              "on-secondary-fixed": "#1a1b26",
+              "inverse-on-surface": "#e8eaf0"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            boxShadow: {
+              'neomorphic': '6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.6)',
+              'inset-neomorphic': 'inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+        body {
+            background-color: #e8eaf0;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            color: #2e3040;
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .shadow-neomorphic {
+            box-shadow: 6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.6);
+        }
+        .shadow-inset-neomorphic {
+            box-shadow: inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5);
+        }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<aside class="h-screen w-64 fixed left-0 top-0 bg-[#e8eaf0] border-r border-slate-200/50 shadow-[6px_0_12px_rgba(0,0,0,0.05)] hidden md:flex flex-col p-4 space-y-2 z-50">
+<div class="text-xl font-semibold text-indigo-600 mb-8 px-4 flex items-center gap-2">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+            SilkShort
+        </div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-indigo-500 hover:bg-slate-100/50 rounded-xl transition-shadow duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">Overview</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-indigo-500 hover:bg-slate-100/50 rounded-xl transition-shadow duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+<span class="font-medium">My URLs</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-indigo-500 hover:bg-slate-100/50 rounded-xl transition-shadow duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-medium">Analytics</span>
+</a>
+<a class="flex items-center gap-3 px-4 py-3 text-slate-500 hover:text-indigo-500 hover:bg-slate-100/50 rounded-xl transition-shadow duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-medium">Admin Panel</span>
+</a>
+<!-- Active Navigation State for Settings -->
+<a class="flex items-center gap-3 px-4 py-3 bg-[#e8eaf0] shadow-[inset_4px_4px_8px_rgba(0,0,0,0.06),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] text-indigo-600 rounded-xl transition-shadow duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-slate-200/50 pt-4">
+<button class="flex items-center gap-3 px-4 py-3 w-full text-slate-500 hover:text-indigo-500 hover:bg-slate-100/50 rounded-xl transition-shadow duration-300">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+<span class="font-medium">Theme Toggle</span>
+</button>
+</div>
+</aside>
+<main class="md:ml-64 p-6 md:p-10 min-h-screen bg-surface">
+<header class="mb-10">
+<h1 class="text-3xl font-extrabold text-on-surface tracking-tight">Account Settings</h1>
+<p class="text-on-surface-variant mt-1">Manage your profile information and security preferences.</p>
+</header>
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-8 max-w-6xl">
+<section class="bg-surface p-8 rounded-xl shadow-neomorphic flex flex-col space-y-6">
+<div class="flex items-center gap-4 border-b border-white/20 pb-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="person">person</span>
+<h2 class="text-xl font-semibold text-on-surface">Profile Information</h2>
+</div>
+<div class="flex flex-col items-center gap-4 py-4">
+<div class="relative group">
+<div class="w-24 h-24 rounded-full shadow-neomorphic bg-surface flex items-center justify-center p-1 overflow-hidden">
+<img alt="User Profile" class="w-full h-full rounded-full object-cover" data-alt="Professional male portrait for profile avatar" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDazsgT_Wj0uKLicr_eaC50b8xtM0r90OucSrrk3F7Dou19U4JHQu_zK2Qt3ZATOc7SjUGvIOSnEocH8IqhOUvBYv_WMMrnz_9hAhgWSbgXpylJjl7NMePV3TtybRX3TeHjygIvcqqSJg7sZryPB9jLuQq48vFndP5J16MuRS6EJqt0eOUhIcrmp-2b8HQnygzuFBcQZfqqfaBVR4Zaf1nP_OWo4y-rB0628mZlgRg7iIW3NWEjLNBDPJZ_LSv2MeBDpcOZ4n3bzQ"/>
+</div>
+<button class="absolute bottom-0 right-0 p-2 bg-surface shadow-neomorphic rounded-full text-primary hover:shadow-inset-neomorphic transition-all active:scale-95">
+<span class="material-symbols-outlined text-sm" data-icon="photo_camera">photo_camera</span>
+</button>
+</div>
+</div>
+<div class="space-y-4">
+<div class="space-y-2">
+<label class="text-sm font-medium text-on-surface-variant ml-2">Email Address</label>
+<div class="w-full px-4 py-3 bg-surface shadow-inset-neomorphic rounded-lg text-slate-500 cursor-not-allowed">
+                            j.doe@silkshort.com
+                        </div>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-on-surface-variant ml-2">Full Name</label>
+<input class="w-full px-4 py-3 bg-surface shadow-inset-neomorphic rounded-lg border-none focus:ring-2 focus:ring-primary/20 text-on-surface placeholder-on-surface-variant/50 outline-none" type="text" value="John Doe"/>
+</div>
+</div>
+<div class="pt-4">
+<button class="w-full py-3 bg-surface shadow-neomorphic text-primary font-semibold rounded-lg hover:shadow-inset-neomorphic transition-all active:scale-95">
+                        Save Changes
+                    </button>
+</div>
+</section>
+<section class="bg-surface p-8 rounded-xl shadow-neomorphic flex flex-col space-y-6">
+<div class="flex items-center gap-4 border-b border-white/20 pb-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="lock">lock</span>
+<h2 class="text-xl font-semibold text-on-surface">Change Password</h2>
+</div>
+<div class="space-y-4 pt-4">
+<div class="space-y-2">
+<label class="text-sm font-medium text-on-surface-variant ml-2">New Password</label>
+<input class="w-full px-4 py-3 bg-surface shadow-inset-neomorphic rounded-lg border-none focus:ring-2 focus:ring-primary/20 text-on-surface placeholder-on-surface-variant/50 outline-none" placeholder="••••••••" type="password"/>
+</div>
+<div class="space-y-2">
+<label class="text-sm font-medium text-on-surface-variant ml-2">Confirm Password</label>
+<input class="w-full px-4 py-3 bg-surface shadow-inset-neomorphic rounded-lg border-none focus:ring-2 focus:ring-primary/20 text-on-surface placeholder-on-surface-variant/50 outline-none" placeholder="••••••••" type="password"/>
+</div>
+</div>
+<div class="flex-1 flex flex-col justify-end pt-8">
+<div class="p-4 bg-surface-container-low rounded-lg shadow-inset-neomorphic mb-6">
+<p class="text-xs text-on-surface-variant leading-relaxed">
+                            Password must contain at least 8 characters, including one uppercase letter, one number, and one special symbol.
+                        </p>
+</div>
+<button class="w-full py-3 bg-surface shadow-neomorphic text-primary font-semibold rounded-lg hover:shadow-inset-neomorphic transition-all active:scale-95">
+                        Update Password
+                    </button>
+</div>
+</section>
+</div>
+<section class="mt-12 max-w-6xl">
+<div class="bg-surface p-8 rounded-xl shadow-neomorphic">
+<div class="flex flex-col md:flex-row md:items-center justify-between gap-6">
+<div class="flex gap-4">
+<span class="material-symbols-outlined text-error text-3xl" data-icon="delete_forever">delete_forever</span>
+<div>
+<h3 class="text-lg font-semibold text-on-surface">Delete Account</h3>
+<p class="text-sm text-on-surface-variant">Permanently remove all your shortened links and data.</p>
+</div>
+</div>
+<button class="px-6 py-3 bg-surface shadow-neomorphic text-error font-semibold rounded-lg hover:shadow-inset-neomorphic transition-all active:scale-95">
+                        Deactivate Account
+                    </button>
+</div>
+</div>
+</section>
+</main>
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-[#e8eaf0] px-4 h-16 rounded-t-3xl shadow-[0_-8px_16px_rgba(0,0,0,0.05)] border-t border-white/20">
+<a class="flex flex-col items-center justify-center text-slate-500 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Links</span>
+</a>
+<a class="flex flex-col items-center justify-center text-slate-500 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center text-indigo-600 shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] rounded-lg px-3 py-1 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>
+
+<!-- Settings -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>SilkShort Admin Dashboard</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error": "#ffffff",
+              "tertiary-container": "#a78bfa",
+              "surface-container-high": "#dcdee4",
+              "secondary-fixed": "#d8dae6",
+              "secondary-container": "#d8dae6",
+              "error-container": "#fee2e2",
+              "inverse-surface": "#2e3040",
+              "on-secondary": "#ffffff",
+              "background": "#e8eaf0",
+              "surface-container-low": "#e5e7ed",
+              "error": "#dc2626",
+              "outline-variant": "#d0d2dc",
+              "primary-container": "#818cf8",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#c4b5fd",
+              "surface-container-lowest": "#f0f2f8",
+              "on-tertiary-fixed": "#2e1065",
+              "on-secondary-container": "#585a68",
+              "secondary-fixed-dim": "#b8baca",
+              "secondary": "#6c6e7e",
+              "on-primary-fixed": "#1e1b4b",
+              "inverse-primary": "#a5b4fc",
+              "surface-tint": "#6366f1",
+              "on-primary-fixed-variant": "#4338ca",
+              "tertiary": "#7c3aed",
+              "outline": "#8a8c9a",
+              "primary-fixed": "#e0e2ff",
+              "surface-dim": "#d4d6dc",
+              "on-background": "#2e3040",
+              "on-surface-variant": "#585a68",
+              "on-secondary-fixed-variant": "#404252",
+              "on-surface": "#2e3040",
+              "surface": "#e8eaf0",
+              "on-tertiary-container": "#3b1f63",
+              "surface-bright": "#edeef4",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#991b1b",
+              "tertiary-fixed": "#ede9fe",
+              "surface-variant": "#dcdee4",
+              "primary": "#6366f1",
+              "on-tertiary-fixed-variant": "#5b21b6",
+              "surface-container-highest": "#d6d8de",
+              "on-primary-container": "#e0e2ff",
+              "surface-container": "#e2e4ea",
+              "primary-fixed-dim": "#a5b4fc",
+              "on-secondary-fixed": "#1a1b26",
+              "inverse-on-surface": "#e8eaf0"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+            boxShadow: {
+              'neomorphic': '6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.6)',
+              'inset-neomorphic': 'inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5)',
+            }
+          },
+        },
+      }
+    </script>
+<style>
+      body {
+        background-color: #e8eaf0;
+        font-family: 'Plus Jakarta Sans', sans-serif;
+      }
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .neomorphic-card {
+        box-shadow: 6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.6);
+      }
+      .neomorphic-inset {
+        box-shadow: inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5);
+      }
+    </style>
+</head>
+<body class="bg-surface text-on-surface">
+<!-- SideNavBar Component -->
+<aside class="hidden md:flex flex-col p-4 space-y-2 h-screen w-64 fixed left-0 top-0 bg-[#e8eaf0] dark:bg-slate-900 border-r border-slate-200/50 dark:border-slate-800/50 shadow-[6px_0_12px_rgba(0,0,0,0.05)] z-40">
+<div class="text-xl font-semibold text-indigo-600 dark:text-indigo-400 mb-8 px-2">SilkShort</div>
+<nav class="flex-1 space-y-2">
+<a class="flex items-center space-x-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-shadow duration-300 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="dashboard">dashboard</span>
+<span class="font-medium">Overview</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-shadow duration-300 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+<span class="font-medium">My URLs</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-shadow duration-300 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="analytics">analytics</span>
+<span class="font-medium">Analytics</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 bg-[#e8eaf0] dark:bg-slate-900 shadow-[inset_4px_4px_8px_rgba(0,0,0,0.06),inset_-4px_-4px_8px_rgba(255,255,255,0.5)] text-indigo-600 dark:text-indigo-400 rounded-xl transition-shadow duration-300" href="#">
+<span class="material-symbols-outlined" data-icon="admin_panel_settings">admin_panel_settings</span>
+<span class="font-medium">Admin Panel</span>
+</a>
+<a class="flex items-center space-x-3 px-4 py-3 text-slate-500 dark:text-slate-400 hover:text-indigo-500 transition-shadow duration-300 hover:bg-slate-100/50 dark:hover:bg-slate-800/50 rounded-xl" href="#">
+<span class="material-symbols-outlined" data-icon="settings">settings</span>
+<span class="font-medium">Settings</span>
+</a>
+</nav>
+<div class="mt-auto border-t border-slate-200/30 pt-4">
+<button class="flex items-center space-x-3 px-4 py-3 text-slate-500 w-full hover:bg-slate-100/50 rounded-xl transition-all">
+<span class="material-symbols-outlined" data-icon="dark_mode">dark_mode</span>
+<span class="font-medium">Theme Toggle</span>
+</button>
+</div>
+</aside>
+<!-- Main Content Area -->
+<main class="md:ml-64 p-6 md:p-10 min-h-screen">
+<!-- Header Section -->
+<header class="flex flex-col md:flex-row justify-between items-start md:items-center mb-10 gap-4">
+<div>
+<h1 class="text-3xl font-bold text-on-surface tracking-tight">Admin Dashboard</h1>
+<p class="text-on-surface-variant font-medium">System performance and user overview</p>
+</div>
+<div class="flex items-center gap-4">
+<div class="neomorphic-inset bg-surface px-4 py-2 rounded-xl flex items-center gap-2">
+<span class="material-symbols-outlined text-outline" data-icon="search">search</span>
+<input class="bg-transparent border-none focus:ring-0 text-sm w-48 font-medium" placeholder="Global search..." type="text"/>
+</div>
+<button class="neomorphic-card bg-surface p-2 rounded-xl text-primary flex items-center justify-center">
+<span class="material-symbols-outlined" data-icon="notifications">notifications</span>
+</button>
+</div>
+</header>
+<!-- Stats Grid -->
+<section class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-10">
+<!-- Total Users -->
+<div class="neomorphic-card bg-surface p-6 rounded-2xl flex flex-col items-center justify-center text-center">
+<div class="p-4 neomorphic-inset bg-surface rounded-full mb-4">
+<span class="material-symbols-outlined text-primary text-3xl" data-icon="group">group</span>
+</div>
+<p class="text-on-surface-variant font-medium text-sm mb-1 uppercase tracking-wider">Total Users</p>
+<h2 class="text-4xl font-bold text-on-surface">12,842</h2>
+<div class="mt-2 text-xs font-semibold text-emerald-600 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+                    +12% from last month
+                </div>
+</div>
+<!-- Total URLs -->
+<div class="neomorphic-card bg-surface p-6 rounded-2xl flex flex-col items-center justify-center text-center">
+<div class="p-4 neomorphic-inset bg-surface rounded-full mb-4">
+<span class="material-symbols-outlined text-tertiary text-3xl" data-icon="link">link</span>
+</div>
+<p class="text-on-surface-variant font-medium text-sm mb-1 uppercase tracking-wider">Total URLs</p>
+<h2 class="text-4xl font-bold text-on-surface">45,109</h2>
+<div class="mt-2 text-xs font-semibold text-emerald-600 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+                    +8% from last month
+                </div>
+</div>
+<!-- Total Clicks -->
+<div class="neomorphic-card bg-surface p-6 rounded-2xl flex flex-col items-center justify-center text-center">
+<div class="p-4 neomorphic-inset bg-surface rounded-full mb-4">
+<span class="material-symbols-outlined text-indigo-500 text-3xl" data-icon="ads_click">ads_click</span>
+</div>
+<p class="text-on-surface-variant font-medium text-sm mb-1 uppercase tracking-wider">Total Clicks</p>
+<h2 class="text-4xl font-bold text-on-surface">892,431</h2>
+<div class="mt-2 text-xs font-semibold text-emerald-600 flex items-center gap-1">
+<span class="material-symbols-outlined text-xs" data-icon="trending_up">trending_up</span>
+                    +24% from last month
+                </div>
+</div>
+</section>
+<!-- Main Dashboard Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-8">
+<!-- Latest Users Table -->
+<section class="lg:col-span-8 neomorphic-card bg-surface rounded-2xl p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-bold text-on-surface">Latest Users</h3>
+<button class="neomorphic-card bg-surface px-4 py-2 rounded-xl text-primary text-sm font-semibold">View All</button>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-on-surface-variant text-sm border-b border-slate-200/50">
+<th class="pb-4 font-semibold">User</th>
+<th class="pb-4 font-semibold">Status</th>
+<th class="pb-4 font-semibold">Joined</th>
+<th class="pb-4 font-semibold">Links</th>
+<th class="pb-4 font-semibold text-right">Action</th>
+</tr>
+</thead>
+<tbody class="text-on-surface text-sm">
+<tr class="border-b border-slate-200/30">
+<td class="py-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full neomorphic-inset flex items-center justify-center bg-surface overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="User profile avatar circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzf4rhyP2bN89ocJgsm0HQ2Fs3drkiYwP5IlzZANMy7tbFt_MjYj8vhUfZKzDRn0W5t-n4pUu5bSypA9iW_3SV0Va7I9O6hIyluBJhpMwG6gs6uUrm0R9VnTnWnDFjO3o3aLYtvhC4FwF0e0N8UciB0tGEzeXHXwXc5zTlLV3gtnfOO8Uz04sk-IN8bh6i_MZshDqn63SkeRjoOdKk51xelAni87jeU7Gh_9RtHSq3n3c57jikWTziNgOk3dK21TC50CtV7IORzg"/>
+</div>
+<span class="font-medium">Alex Rivera</span>
+</td>
+<td class="py-4">
+<span class="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-lg text-xs font-bold">Active</span>
+</td>
+<td class="py-4 text-on-surface-variant">2 mins ago</td>
+<td class="py-4 font-semibold">14</td>
+<td class="py-4 text-right">
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<tr class="border-b border-slate-200/30">
+<td class="py-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full neomorphic-inset flex items-center justify-center bg-surface overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="User profile avatar circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA5spiMv6J4em8KtmO5kOiNgmG3pHLB8ELvDlJLBG7qTq5c11yMlpWNCL0cr_oxRG6kse2SrPZLSxw0Lnl8LEETcx6OWrnyu8K_rjoR1n4JqoYyD8coUxN2w9tx65sxj4GZ14YLiwGZLhmSoZSo7mjHPwt7CO268mDNNmog3v_s9-eOrxyhwatamugWWRwuz889LYGV_UYtofLnHj5ocGoStUxhqfJM7rhcxNYqj0JWhfm8Wm5RBNWnU7UtYdszPVh3bnCzgqeC-g"/>
+</div>
+<span class="font-medium">Sarah Chen</span>
+</td>
+<td class="py-4">
+<span class="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-lg text-xs font-bold">Active</span>
+</td>
+<td class="py-4 text-on-surface-variant">15 mins ago</td>
+<td class="py-4 font-semibold">3</td>
+<td class="py-4 text-right">
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<tr class="border-b border-slate-200/30">
+<td class="py-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full neomorphic-inset flex items-center justify-center bg-surface overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="User profile avatar circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDewF7F0AF0KL23SC6yUu_QUokmCU55EJxRnquaNxc_xJg1SQ6bC_tq1zniclco-S6M6azxsGIRm3Ex5IwPJ90MnpQ9rtHHVBYuM_K8qxX-B5cjC3nRWrB5Z4zBDpfIJAPiqj9vX9V4GTdgeww0hPxZwtlYA6ZLg5OBnd_qhW_ofIn5SfvmPtWB03bvJTQzwpf23an8zsQOZ1_cewuPupPLPNKRGrRe1Mqln8wrRQTjXXEbIImUoTIu7xs-Y3UORVXUNiceFGZHwg"/>
+</div>
+<span class="font-medium">Marcus Wright</span>
+</td>
+<td class="py-4">
+<span class="px-2 py-1 bg-amber-100 text-amber-700 rounded-lg text-xs font-bold">Pending</span>
+</td>
+<td class="py-4 text-on-surface-variant">1 hour ago</td>
+<td class="py-4 font-semibold">0</td>
+<td class="py-4 text-right">
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+<tr>
+<td class="py-4 flex items-center gap-3">
+<div class="w-8 h-8 rounded-full neomorphic-inset flex items-center justify-center bg-surface overflow-hidden">
+<img alt="User Avatar" class="w-full h-full object-cover" data-alt="User profile avatar circle" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBJ6NHxxH3-LUJWu6uyRncwn96eKT2RR86pJwvmgK2RSdNZmh1cpHJYvoDgUjr08uZwtlX5jqEpQQRePrwkxXQbEZFZkYnaHF36FIqSGZMmcRRmrJMsm5x9vAC5w-Hhe4Cm_fGLfdaaj_Q_kfNUIc50NHYEjbrXygaEEqPW3v18Cq1CWfxmJVheNHajcHXSRKExcS9i8DM9V_Prw4eMxxVJ418NPexngkkLQhnWIGewGrgqn4CoTHIk2d2ERkFOI9Qf9hY1ZIxQ0A"/>
+</div>
+<span class="font-medium">Elena Gomez</span>
+</td>
+<td class="py-4">
+<span class="px-2 py-1 bg-emerald-100 text-emerald-700 rounded-lg text-xs font-bold">Active</span>
+</td>
+<td class="py-4 text-on-surface-variant">3 hours ago</td>
+<td class="py-4 font-semibold">212</td>
+<td class="py-4 text-right">
+<button class="material-symbols-outlined text-outline hover:text-primary transition-colors" data-icon="more_vert">more_vert</button>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Recent Activity Placeholder -->
+<section class="lg:col-span-4 neomorphic-card bg-surface rounded-2xl p-6">
+<h3 class="text-xl font-bold text-on-surface mb-6">Recent Activity</h3>
+<div class="space-y-6">
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-3 h-3 rounded-full bg-primary shadow-[0_0_10px_rgba(99,102,241,0.5)]"></div>
+<div class="w-0.5 h-full bg-slate-300 mt-2"></div>
+</div>
+<div class="pb-2">
+<p class="text-sm font-semibold text-on-surface">System Backup Completed</p>
+<p class="text-xs text-on-surface-variant">Database optimization and cloud storage sync successful.</p>
+<span class="text-[10px] text-outline font-bold mt-1 block">10:45 AM</span>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-3 h-3 rounded-full bg-tertiary"></div>
+<div class="w-0.5 h-full bg-slate-300 mt-2"></div>
+</div>
+<div class="pb-2">
+<p class="text-sm font-semibold text-on-surface">New Admin Invited</p>
+<p class="text-xs text-on-surface-variant">Invitation sent to jordan@silkshort.io</p>
+<span class="text-[10px] text-outline font-bold mt-1 block">09:12 AM</span>
+</div>
+</div>
+<div class="flex gap-4">
+<div class="flex flex-col items-center">
+<div class="w-3 h-3 rounded-full bg-error"></div>
+</div>
+<div class="pb-2">
+<p class="text-sm font-semibold text-on-surface">Flagged URL Detected</p>
+<p class="text-xs text-on-surface-variant">URL slk.sh/phish-test was automatically disabled.</p>
+<span class="text-[10px] text-outline font-bold mt-1 block">Yesterday</span>
+</div>
+</div>
+</div>
+<div class="mt-8 neomorphic-inset bg-surface p-4 rounded-xl text-center">
+<p class="text-xs font-medium text-on-surface-variant italic">System health is currently at 98.4%</p>
+</div>
+</section>
+<!-- Latest URLs Table -->
+<section class="lg:col-span-12 neomorphic-card bg-surface rounded-2xl p-6">
+<div class="flex justify-between items-center mb-6">
+<h3 class="text-xl font-bold text-on-surface">Latest Generated URLs</h3>
+<div class="flex gap-2">
+<button class="neomorphic-card bg-surface p-2 rounded-lg text-outline">
+<span class="material-symbols-outlined text-sm" data-icon="filter_list">filter_list</span>
+</button>
+<button class="neomorphic-card bg-surface p-2 rounded-lg text-outline">
+<span class="material-symbols-outlined text-sm" data-icon="download">download</span>
+</button>
+</div>
+</div>
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead>
+<tr class="text-on-surface-variant text-sm border-b border-slate-200/50">
+<th class="pb-4 font-semibold">Short URL</th>
+<th class="pb-4 font-semibold">Destination URL</th>
+<th class="pb-4 font-semibold">Owner</th>
+<th class="pb-4 font-semibold">Clicks</th>
+<th class="pb-4 font-semibold text-right">Status</th>
+</tr>
+</thead>
+<tbody class="text-on-surface text-sm">
+<tr class="border-b border-slate-200/30">
+<td class="py-4 font-medium text-primary">slk.sh/SUMMER24</td>
+<td class="py-4 text-on-surface-variant max-w-xs truncate">https://fashion-retail-store.com/campaign/summer-collection-launch-2024</td>
+<td class="py-4">Alex Rivera</td>
+<td class="py-4 font-bold">1,204</td>
+<td class="py-4 text-right">
+<span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded-lg text-xs font-bold">Trending</span>
+</td>
+</tr>
+<tr class="border-b border-slate-200/30">
+<td class="py-4 font-medium text-primary">slk.sh/beta-test</td>
+<td class="py-4 text-on-surface-variant max-w-xs truncate">https://github.com/project-alpha/core/releases/tag/v0.9-beta</td>
+<td class="py-4">Sarah Chen</td>
+<td class="py-4 font-bold">452</td>
+<td class="py-4 text-right">
+<span class="px-2 py-1 bg-slate-100 text-slate-700 rounded-lg text-xs font-bold">Normal</span>
+</td>
+</tr>
+<tr>
+<td class="py-4 font-medium text-primary">slk.sh/portfolio</td>
+<td class="py-4 text-on-surface-variant max-w-xs truncate">https://dribbble.com/elena-gomez-designs/shots/featured</td>
+<td class="py-4">Elena Gomez</td>
+<td class="py-4 font-bold">8,912</td>
+<td class="py-4 text-right">
+<span class="px-2 py-1 bg-indigo-100 text-indigo-700 rounded-lg text-xs font-bold">Trending</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</div>
+<!-- Footer Spacer for Mobile Nav -->
+<div class="h-20 md:hidden"></div>
+</main>
+<!-- BottomNavBar for Mobile -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full z-50 flex justify-around items-center bg-[#e8eaf0] dark:bg-slate-900 px-4 h-16 border-t border-white/20 shadow-[0_-8px_16px_rgba(0,0,0,0.05)] rounded-t-3xl">
+<a class="flex flex-col items-center justify-center pt-2 pb-safe text-slate-500 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="home">home</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center pt-2 pb-safe text-slate-500 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="link">link</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Links</span>
+</a>
+<a class="flex flex-col items-center justify-center pt-2 pb-safe text-indigo-600 shadow-[inset_2px_2px_4px_rgba(0,0,0,0.06)] rounded-lg px-3 py-1" href="#">
+<span class="material-symbols-outlined" data-icon="bar_chart">bar_chart</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Stats</span>
+</a>
+<a class="flex flex-col items-center justify-center pt-2 pb-safe text-slate-500 active:scale-90" href="#">
+<span class="material-symbols-outlined" data-icon="person">person</span>
+<span class="font-['Plus_Jakarta_Sans'] text-[10px] font-medium">Profile</span>
+</a>
+</nav>
+</body></html>
+
+<!-- Admin Dashboard -->
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Completing Sign In | SilkShort</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "on-error": "#ffffff",
+              "tertiary-container": "#a78bfa",
+              "surface-container-high": "#dcdee4",
+              "secondary-fixed": "#d8dae6",
+              "secondary-container": "#d8dae6",
+              "error-container": "#fee2e2",
+              "inverse-surface": "#2e3040",
+              "on-secondary": "#ffffff",
+              "background": "#e8eaf0",
+              "surface-container-low": "#e5e7ed",
+              "error": "#dc2626",
+              "outline-variant": "#d0d2dc",
+              "primary-container": "#818cf8",
+              "on-primary": "#ffffff",
+              "tertiary-fixed-dim": "#c4b5fd",
+              "surface-container-lowest": "#f0f2f8",
+              "on-tertiary-fixed": "#2e1065",
+              "on-secondary-container": "#585a68",
+              "secondary-fixed-dim": "#b8baca",
+              "secondary": "#6c6e7e",
+              "on-primary-fixed": "#1e1b4b",
+              "inverse-primary": "#a5b4fc",
+              "surface-tint": "#6366f1",
+              "on-primary-fixed-variant": "#4338ca",
+              "tertiary": "#7c3aed",
+              "outline": "#8a8c9a",
+              "primary-fixed": "#e0e2ff",
+              "surface-dim": "#d4d6dc",
+              "on-background": "#2e3040",
+              "on-surface-variant": "#585a68",
+              "on-secondary-fixed-variant": "#404252",
+              "on-surface": "#2e3040",
+              "surface": "#e8eaf0",
+              "on-tertiary-container": "#3b1f63",
+              "surface-bright": "#edeef4",
+              "on-tertiary": "#ffffff",
+              "on-error-container": "#991b1b",
+              "tertiary-fixed": "#ede9fe",
+              "surface-variant": "#dcdee4",
+              "primary": "#6366f1",
+              "on-tertiary-fixed-variant": "#5b21b6",
+              "surface-container-highest": "#d6d8de",
+              "on-primary-container": "#e0e2ff",
+              "surface-container": "#e2e4ea",
+              "primary-fixed-dim": "#a5b4fc",
+              "on-secondary-fixed": "#1a1b26",
+              "inverse-on-surface": "#e8eaf0"
+            },
+            fontFamily: {
+              "headline": ["Plus Jakarta Sans"],
+              "body": ["Plus Jakarta Sans"],
+              "label": ["Plus Jakarta Sans"]
+            },
+            borderRadius: {"DEFAULT": "0.5rem", "lg": "1rem", "xl": "1.5rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            display: inline-block;
+            vertical-align: middle;
+        }
+        
+        .neomorphic-raised {
+            box-shadow: 6px 6px 12px rgba(0,0,0,0.08), -6px -6px 12px rgba(255,255,255,0.6);
+        }
+        
+        .neomorphic-inset {
+            box-shadow: inset 4px 4px 8px rgba(0,0,0,0.06), inset -4px -4px 8px rgba(255,255,255,0.5);
+        }
+
+        .spinner-track {
+            box-shadow: inset 2px 2px 5px rgba(0,0,0,0.05), inset -2px -2px 5px rgba(255,255,255,0.5);
+        }
+
+        @keyframes spin-slow {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .animate-spin-slow {
+            animation: spin-slow 2s linear infinite;
+        }
+    </style>
+</head>
+<body class="bg-background font-body text-on-surface min-h-screen flex flex-col">
+<!-- TopNavBar Suppression (Transactional/Focused Journey) -->
+<main class="flex-grow flex items-center justify-center p-6">
+<div class="w-full max-w-md">
+<!-- Main Authentication Card -->
+<div class="neomorphic-raised bg-background rounded-xl p-10 flex flex-col items-center text-center">
+<!-- Brand Anchor -->
+<div class="mb-12">
+<h1 class="text-3xl font-extrabold tracking-tight text-primary">
+                        SilkShort
+                    </h1>
+<p class="text-on-surface-variant text-sm mt-1 font-medium">
+                        Premium URL Shortener
+                    </p>
+</div>
+<!-- Neomorphic Loading Indicator -->
+<div class="relative w-24 h-24 mb-10 flex items-center justify-center">
+<!-- Outer Track (Inset) -->
+<div class="absolute inset-0 rounded-full spinner-track border-4 border-surface-container"></div>
+<!-- Spinning Element (Raised) -->
+<div class="absolute inset-0 rounded-full border-t-4 border-primary animate-spin-slow"></div>
+<!-- Inner Core (Raised Neomorphic) -->
+<div class="w-12 h-12 rounded-full neomorphic-raised bg-background flex items-center justify-center">
+<span class="material-symbols-outlined text-primary text-2xl" data-icon="sync">sync</span>
+</div>
+</div>
+<!-- Text Content -->
+<div class="space-y-3">
+<h2 class="text-xl font-semibold text-on-surface">
+                        Completing Sign In
+                    </h2>
+<p class="text-on-surface-variant leading-relaxed max-w-[280px] mx-auto">
+                        We're synchronizing your account details. Please don't close this window.
+                    </p>
+</div>
+<!-- Status Feedback (Subtle Inset) -->
+<div class="mt-12 w-full neomorphic-inset bg-background rounded-lg py-3 px-4 flex items-center space-x-3">
+<span class="w-2 h-2 rounded-full bg-primary shrink-0"></span>
+<span class="text-xs font-medium text-on-surface-variant tracking-wide">
+                        ESTABLISHING SECURE CONNECTION...
+                    </span>
+</div>
+</div>
+<!-- Footer Utility Links (Minimal) -->
+<div class="mt-8 flex justify-center space-x-6">
+<a class="text-xs font-medium text-on-surface-variant hover:text-primary transition-colors" href="#">
+                    Privacy Policy
+                </a>
+<a class="text-xs font-medium text-on-surface-variant hover:text-primary transition-colors" href="#">
+                    Terms of Service
+                </a>
+<a class="text-xs font-medium text-on-surface-variant hover:text-primary transition-colors" href="#">
+                    Help Center
+                </a>
+</div>
+</div>
+</main>
+<!-- BottomNavBar Suppression (Transactional/Focused Journey) -->
+<!-- Background Abstract Pattern -->
+<div class="fixed inset-0 -z-10 opacity-30 pointer-events-none">
+<div class="absolute top-[-10%] left-[-5%] w-[40%] h-[40%] rounded-full bg-primary-container blur-[100px]"></div>
+<div class="absolute bottom-[-10%] right-[-5%] w-[40%] h-[40%] rounded-full bg-tertiary-container blur-[100px]"></div>
+</div>
+</body></html>
