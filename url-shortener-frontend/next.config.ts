@@ -1,6 +1,7 @@
 import type { NextConfig } from "next";
 
-const STORAGE_HOST = (process.env.NEXT_PUBLIC_STORAGE_URL || "localhost")
+const storageUrlOrHost = process.env.NEXT_PUBLIC_STORAGE_URL || "localhost";
+
 const BACKEND_ORIGIN = (process.env.BACKEND_ORIGIN || "http://localhost:8080").replace(/\/$/, "");
 
 const nextConfig: NextConfig = {
@@ -32,7 +33,11 @@ const nextConfig: NextConfig = {
       },
       {
         protocol: "https",
-        hostname: STORAGE_HOST,
+        hostname: storageUrlOrHost,
+      },
+      {
+        protocol: "https",
+        hostname: "storage.urlshort.id.vn",
       },
       {
         protocol: "https",
