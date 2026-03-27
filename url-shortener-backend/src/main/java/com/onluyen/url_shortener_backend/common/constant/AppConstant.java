@@ -88,6 +88,8 @@ public final class AppConstant {
 
     // --- URL Shortener ---
     public static final int SHORT_CODE_MIN_LENGTH = 6;
+    public static final int SHORT_CODE_DEFAULT_LENGTH = 7;
+    public static final int SHORT_CODE_MAX_RETRIES = 5;
     public static final String ALLOWED_STRING = "0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
     public static final String SHORT_CODE_REGEX_PATTERN = "[a-zA-Z0-9_\\-]+";
     public static final String SHORT_CODE_REDIRECT_PATH = "/{shortCode:" + SHORT_CODE_REGEX_PATTERN + "}";

@@ -75,9 +75,18 @@ public class UrlService {
             }
             shortCode = request.getCustomAlias();
         } else {
-            shortCode = shortCodeGenerator.generate();
-            // Retry mechanisms omitted for simplicity since Redis Counter guarantees
-            // uniqueness.
+            boolean generated = false;
+            for (int i = 0; i < AppConstant.SHORT_CODE_MAX_RETRIES; i++) {
+                String potentialCode = shortCodeGenerator.generate();
+                if (!urlRepository.existsByShortCode(potentialCode)) {
+                    shortCode = potentialCode;
+                    generated = true;
+                    break;
+                }
+            }
+            if (!generated) {
+                throw new BusinessException(ErrorCode.INTERNAL_SERVER_ERROR, "Không thể tạo mã rút gọn duy nhất sau nhiều lần thử");
+            }
         }
 
         Url url = Url.builder()
