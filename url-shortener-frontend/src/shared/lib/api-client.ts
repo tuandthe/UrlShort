@@ -25,10 +25,45 @@ const apiClient = axios.create({
   timeout: 10000,
 });
 
+let refreshPromise: Promise<string> | null = null;
+let isSigningOut = false;
+
+const isRefreshEndpoint = (url?: string) => {
+  if (!url) {
+    return false;
+  }
+
+  return url.includes(API_ENDPOINTS.AUTH.REFRESH);
+};
+
+const beginRefreshFlow = () => {
+  if (!refreshPromise) {
+    refreshPromise = refreshAccessToken().finally(() => {
+      refreshPromise = null;
+    });
+  }
+
+  return refreshPromise;
+};
+
 apiClient.interceptors.request.use(async (config) => {
-  const session = await getSession();
-  if (session?.accessToken) {
-    config.headers.Authorization = `Bearer ${session.accessToken}`;
+  let accessToken: string | undefined;
+
+  if (refreshPromise && !isRefreshEndpoint(config.url)) {
+    try {
+      accessToken = await refreshPromise;
+    } catch {
+      // Let downstream handlers handle authentication failures consistently.
+    }
+  }
+
+  if (!accessToken) {
+    const session = await getSession();
+    accessToken = session?.accessToken;
+  }
+
+  if (accessToken) {
+    config.headers.Authorization = `Bearer ${accessToken}`;
   }
 
   if (typeof FormData !== "undefined" && config.data instanceof FormData && config.headers) {
@@ -46,17 +81,6 @@ apiClient.interceptors.request.use(async (config) => {
 
   return config;
 });
-
-let refreshPromise: Promise<string> | null = null;
-let isSigningOut = false;
-
-const isRefreshEndpoint = (url?: string) => {
-  if (!url) {
-    return false;
-  }
-
-  return url.includes(API_ENDPOINTS.AUTH.REFRESH);
-};
 
 
 const refreshAccessToken = async (): Promise<string> => {
@@ -120,13 +144,7 @@ apiClient.interceptors.response.use(
       originalRequest._retry = true;
 
       try {
-        if (!refreshPromise) {
-          refreshPromise = refreshAccessToken().finally(() => {
-            refreshPromise = null;
-          });
-        }
-
-        const freshAccessToken = await refreshPromise;
+        const freshAccessToken = await beginRefreshFlow();
         originalRequest.headers = originalRequest.headers || {};
         originalRequest.headers.Authorization = `Bearer ${freshAccessToken}`;
 
